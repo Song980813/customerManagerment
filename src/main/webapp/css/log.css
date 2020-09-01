@@ -72,7 +72,6 @@
 
 .btn{
      position: absolute;
-     top: 16rem;
      right: 2.5rem;
      border: none;
      color: #fff;
@@ -91,7 +90,7 @@
 }
 .wel{
 	width: 375px;
-	height: 355px;
+	height: 160px;
 	color: #347ebc;
     font-size: 1.5rem;
     position: absolute;
@@ -112,6 +111,21 @@ input{
      display: flex;
 	
 }
+.hh{
+     position: absolute;
+     top: 13.5rem;
+     right: 2.5rem;
+     display: flex;
+
+ }
+.dhhm{
+    position: absolute;
+    top: 20.5rem;
+    right: 2.5rem;
+    display: flex;
+
+}
+
 .rem{
 	 position: absolute;
      top: 12.5rem;
@@ -164,6 +178,29 @@ input{
     	top: 5rem;
         right: 3.5rem;
     }
+    .hh{
+        top: 11rem;
+        right: 3.5rem;
+    }
+    .dhhm{
+        top: 11rem;
+        right: 3.5rem;
+    }
+
+    .user{
+        top: 5rem;
+        right: 3.5rem;
+    }
+    .hh{
+        top: 11rem;
+        right: 3.5rem;
+    }
+    .dhhm{
+        top: 11rem;
+        right: 3.5rem;
+    }
+
+
     .password{
     	top: 8rem;
         right: 3.5rem;
@@ -181,8 +218,6 @@ input{
         right: 3.5rem;
     }
     .btn{
-    	top: 14rem;
-        width: 15rem;
     }
    
 }
