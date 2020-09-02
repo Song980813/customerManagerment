@@ -2,7 +2,6 @@ package com.huayu.management.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +13,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author Song
- * @since 2020-08-28
+ * @since 2020-09-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -43,7 +42,7 @@ public class TbBusiness implements Serializable {
     /**
      * 预计截单日期
      */
-    private LocalDateTime closingdate;
+    private String closingdate;
 
     /**
      * 联系人

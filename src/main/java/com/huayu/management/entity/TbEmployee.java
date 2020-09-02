@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author Song
- * @since 2020-08-28
+ * @since 2020-09-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -22,6 +22,10 @@ public class TbEmployee implements Serializable {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
+
+    private Integer usernum;
+
+    private String password;
 
     /**
      * 姓名
@@ -44,19 +48,19 @@ public class TbEmployee implements Serializable {
     private String postId;
 
     /**
-     * 部门
+     * 电话号码
      */
-    private Integer deptId;
-
-    /**
-     * 月薪
-     */
-    private Integer salary;
+    private Integer phone;
 
     /**
      * 头像
      */
     private String identificationPhoto;
+
+    /**
+     * 人生格言
+     */
+    private String motto;
 
 
 }

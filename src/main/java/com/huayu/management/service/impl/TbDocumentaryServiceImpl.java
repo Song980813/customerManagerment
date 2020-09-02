@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author Song
- * @since 2020-08-28
+ * @since 2020-09-02
  */
 @Service
 public class TbDocumentaryServiceImpl extends ServiceImpl<TbDocumentaryMapper, TbDocumentary> implements ITbDocumentaryService {

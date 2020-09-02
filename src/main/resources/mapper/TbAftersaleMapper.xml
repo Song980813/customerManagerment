@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayu.management.mapper.TbAftersaleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huayu.management.entity.TbAftersale">
+        <id column="id" property="id" />
+        <result column="theme" property="theme" />
+        <result column="step" property="step" />
+        <result column="personliable" property="personliable" />
+        <result column="participants" property="participants" />
+        <result column="customername" property="customername" />
+        <result column="contractno" property="contractno" />
+        <result column="mcinformation" property="mcinformation" />
+        <result column="conperson" property="conperson" />
+        <result column="fixtelephone" property="fixtelephone" />
+        <result column="mobphone" property="mobphone" />
+        <result column="emailqq" property="emailqq" />
+        <result column="servicetype" property="servicetype" />
+        <result column="servicem" property="servicem" />
+        <result column="startime" property="startime" />
+        <result column="endtime" property="endtime" />
+        <result column="sercontent" property="sercontent" />
+        <result column="cusfeedba" property="cusfeedba" />
+        <result column="serperson" property="serperson" />
+        <result column="serrating" property="serrating" />
+        <result column="relattachm" property="relattachm" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, theme, step, personliable, participants, customername, contractno, mcinformation, conperson, fixtelephone, mobphone, emailqq, servicetype, servicem, startime, endtime, sercontent, cusfeedba, serperson, serrating, relattachm
+    </sql>
+
+</mapper>

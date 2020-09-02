@@ -29,7 +29,8 @@ public class CodeGenerator {
     private static final String packageName = "com.huayu";
     //上一级包名-模板名
     private static final String moduleName = "management";
-    private static final String tableName = ("tb_customer");
+    //表名
+    private static final String[] tableName = {"tb_aftersale","tb_business","tb_contract","tb_customer","tb_department","tb_documentary","tb_employee","tb_income","tb_invoice","tb_post","tb_reply"};
     private static final String tablePrefix = "tb_";
 
     public static void main(String[] args) {
@@ -130,7 +131,7 @@ public class CodeGenerator {
         //strategy.setInclude(Scanner("").split(","));
         strategy.setInclude(tableName);
         strategy.setControllerMappingHyphenStyle(true);
-        //strategy.setTablePrefix(tablePrefix + "_");
+        strategy.setTablePrefix(tablePrefix + "_");
         return strategy;
     }
 }

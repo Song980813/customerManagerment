@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>售后服务</title>
+</head>
+
+<link rel="stylesheet" href="/layui/css/layui.css" media="all">
+<script src="/layui/layui.js"></script>
+<body>
+<table id="demo" lay-filter="test"></table>
+
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,height: 312
+            ,url: '/demo/table/user/' //数据接口
+            ,page: true //开启分页
+            ,cols: [[ //表头
+                 {field: '', title: 'id', width:80,hide:true}
+                ,{field: '', title: '主题', width:110,event:'viewReport'}
+                ,{field: '', title: '服务类型', width:110,}
+                ,{field: '', title: '开始时间', width:110}
+                ,{field: '', title: '服务人员', width: 177}
+                ,{field: '', title: '服务评分', width: 110}
+            ]]
+        });
+        table.on('tool(demo)', function (obj) {
+            let event = obj.event;
+            if (event === "viewReport"){
+                // 处理你的业务逻辑
+            }
+        });
+    });
+</script>
+</body>
+</html>
