@@ -5,35 +5,23 @@
 		<title></title>
         <link rel="stylesheet" href="/css/jigsaw.css">
 		<link rel="stylesheet" type="text/css" href="/css/index.css"/>
-       <!-- <style>
-            .container {
-                width: 310px;
-                margin: 100px auto;
-            }
-            input {
-                display: block;
-                width: 290px;
-                line-height: 40px;
-                margin: 10px 0;
-                padding: 0 10px;
-                outline: none;
-                border:1px solid #c8cccf;
-                border-radius: 4px;
-                color:#6a6f77;
-            }
-            #msg {
-                width: 100%;
-                line-height: 40px;
-                font-size: 14px;
-                text-align: center;
-            }
-            a:link,a:visited,a:hover,a:active {
-                margin-left: 100px;
-                color: #0366D6;
-            }
-        </style>-->
-	</head>
 
+	</head>
+    <script type="text/javascript">
+        function checkPhone(){
+            var name = document.getElementById('na').value;
+            $("#a1").html("");
+            if(!(/^[\u4e00-\u9fa5]{2,6}$/.test(name))){
+                $("#a1").html("<img  src='/img/cw.png' style='height:20px;width:20px'/>");
+                return false;
+            }else if (name=="") {
+                alert("当前为空")
+
+            }else {
+                $("#a1").html("<img src='/img/zq.png' style='height:20px;width:20px' />");
+            }
+        }
+    </script>
 	<body>
 		<div class="bg1"></div>
 
@@ -41,7 +29,7 @@
 		        CRM管理系统
 		    <div class="gy2" >打造国内最具规模的、最专业的供CRM客户管理平台 </div>
 		</div>
-        <form action="/loging.do" method="get">
+            <form class="layui-form" action="/selectyh.do"  enctype="multipart/form-data" method="get">
             <div class="bg"  style="height: 666px">
 
 			<div class="wel">用户登录</div>
