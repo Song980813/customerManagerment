@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>合同详情</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <!---------------------------------合同详情----------------------------------------->
+</head>
+<style type="text/css">
+    .box1{
+        position:absolute;
+        top: 0px;
+        left:120px;
+        border: 1px black solid;
+        width: 1100px;
+        height: 1200px;
+    }
+
+
+    </style>
+<body>
+<center>
+<div class="box1">
+<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">优先级</label>
+            <div class="layui-input-block">
+                <input type="radio" name="you" value="低" title="低" checked>
+                <input type="radio" name="you" value="中" title="中" >
+                <input type="radio" name="you" value="高" title="高">
+            </div>
+        </div>
+        <button type="reset"  	class="layui-btn layui-btn-primary">返回</button>
+        <button type="reset"  	class="layui-btn layui-btn-primary">刷新</button>
+    </div>
+    <div style="background-color: #fcf8e3;width: 100%;height: 40px">客户信息</div>
+<!--    <hr class="layui-bg-orange">&lt;!&ndash;分割线&ndash;&gt;-->
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">客户名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">所属行业</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">所在城市</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">详细地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+    </div>
+
+    <hr class="layui-bg-orange"><!--分割线-->
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">合同名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">合同编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">合同金额</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <!--签约日期-->
+        <div class="layui-inline">
+            <label class="layui-form-label">签约日期</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">生效日期</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test2" placeholder="yyyy-MM-dd">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">服务期至</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test3" placeholder="yyyy-MM-dd">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">对方联系人</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">固定电话</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">移动电话</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">邮件/QQ</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+        <label class="layui-form-label">主要技术条款</label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="height:200px;width:500px">
+        </div>
+    </div>
+        <div class="layui-inline">
+        <label class="layui-form-label">主要商务条款</label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="height:200px;width:500px">
+        </div>
+    </div>
+    </div>
+
+    <button type="button" class="layui-btn" id="test4"><i class="layui-icon"></i>上传文件</button>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">合同所属部门</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">关联人员</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-radius" lay-submit lay-filter="*">保存</button>
+            <button type="button" class="layui-btn layui-btn-radius">重置</button>
+            <button type="button" class="layui-btn layui-btn-radius">提交主管审核</button>
+            <button type="button" class="layui-btn layui-btn-radius">组织多人评审</button>
+            <button type="button" class="layui-btn layui-btn-radius">登记完成转执行</button>
+            <button type="button" class="layui-btn layui-btn-radius">取消</button>
+        </div>
+    </div>
+    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+
+
+</form>
+</div>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //各种基于事件的操作，下面会有进一步介绍
+    });
+</script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //常规用法
+        laydate.render({
+            elem: '#test2'
+        });
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //常规用法
+        laydate.render({
+            elem: '#test3'
+        });
+    });
+</script>
+<script>
+    //指定允许上传的文件类型
+    upload.render({
+        elem: '#test4'
+        ,url: 'https://httpbin.org/post' //改成您自己的上传接口
+        ,accept: 'file' //普通文件
+        ,done: function(res){
+            layer.msg('上传成功');
+            console.log(res);
+        }
+    });
+</script>
+</center>
+</body>
+</html>
+</html>
