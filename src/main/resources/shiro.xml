@@ -9,18 +9,18 @@
         <property name="realm" ref="realmDemo"/>
     </bean>
     <bean id="realmDemo" class="com.huayu.management.shirorealm.RealmDemo">
-        <property name="credentialsMatcher">
+        <!--<property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="MD5"></property>
                 <property name="hashIterations" value="1024"></property>
             </bean>
-        </property>
+        </property>-->
     </bean>
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!--必须配置-->
         <property name="securityManager" ref="securityManager" />
         <!-- 如果没有认证访问其他需要认证的连接则跳转到的页面 -->
-        <property name="loginUrl" value="" />
+        <property name="loginUrl" value="/loghtml/loging.html" />
 
         <!--
         	配置哪些页面需要受保护.
@@ -32,7 +32,8 @@
         -->
         <property name="filterChainDefinitions">
             <value>
-                /loging=anon
+                /loging.html=anon
+                /customer/addcustomer.html=authc
             </value>
         </property>
     </bean>

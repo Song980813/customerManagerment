@@ -26,8 +26,8 @@
     <property name="tableUnderline" value="true"></property>
     <!-- 全局的主键策略 -->
     <property name="idType" value="AUTO"/>
-    <!-- 全局的表前缀策略配置 -->
-    <property name="tablePrefix" value="tb_"></property>
+<!--    &lt;!&ndash; 全局的表前缀策略配置 &ndash;&gt;
+    <property name="tablePrefix" value="tb_"></property>-->
   </bean>
 
   <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">

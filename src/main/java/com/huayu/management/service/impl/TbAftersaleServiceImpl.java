@@ -1,9 +1,9 @@
 package com.huayu.management.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.huayu.management.entity.TbAftersale;
 import com.huayu.management.mapper.TbAftersaleMapper;
 import com.huayu.management.service.ITbAftersaleService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +16,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TbAftersaleServiceImpl extends ServiceImpl<TbAftersaleMapper, TbAftersale> implements ITbAftersaleService {
+
+
 
 }

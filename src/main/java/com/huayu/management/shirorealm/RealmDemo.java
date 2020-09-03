@@ -1,14 +1,17 @@
 package com.huayu.management.shirorealm;
 
-
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.huayu.management.entity.TbEmployee;
+import com.huayu.management.service.ITbEmployeeService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class RealmDemo extends AuthorizingRealm {
-
-
+    @Autowired
+    private  ITbEmployeeService employeeService;
     /**
      * 认证
      * @param authenticationToken
@@ -17,21 +20,22 @@ public class RealmDemo extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-       /* UsernamePasswordToken token=(UsernamePasswordToken)authenticationToken;
-        String userNum=token.getUsername();
-        Employee userInfo=new Employee();
-        userInfo.setUsernumber(Integer.parseInt(userNum));
-
-        Employee userInfo1=employeeMapper.selectOne(userInfo);
-        if(userInfo1==null){
-            throw new UnknownAccountException("此用户不存在");
+        System.out.println("走认证q dfd");
+        UsernamePasswordToken usernamePasswordToken=(UsernamePasswordToken)authenticationToken;
+        String username=usernamePasswordToken.getUsername();
+        //根据用户查询数据库
+        QueryWrapper queryWrapper=new QueryWrapper();
+        System.out.println("當前用戶名");
+        queryWrapper.eq("usernum",username);
+        TbEmployee login=(TbEmployee)employeeService.getOne(queryWrapper);
+        System.out.println("當前"+login.getUsernum()+login.getPassword());
+        if(login==null){
+            System.out.println("用戶不存在");
+            throw  new UnknownAccountException("此用户不存在");
         }
-        ByteSource byteSource=ByteSource.Util.bytes(String.valueOf(userInfo1.getUsernumber()));
-        AuthenticationInfo authenticationInfo=
-                new SimpleAuthenticationInfo(userInfo1.getUsernumber(),userInfo1.getPassword(),byteSource,getName());
-        */return null;
+        SimpleAuthenticationInfo authenticationInfo=new SimpleAuthenticationInfo(login.getUsernum(),login.getPassword(),getName());
+        return  authenticationInfo;
     }
-
     /**
      * 授权器
      * @param principalCollection
@@ -39,7 +43,7 @@ public class RealmDemo extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-
+      System.out.println("授权");
             /*//1、先拿到用户名
             Object object=principalCollection.getPrimaryPrincipal();
             //2、根据用户名查询数据库得到角色和权限
