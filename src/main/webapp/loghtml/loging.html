@@ -3,17 +3,34 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+        <link rel="stylesheet" href="/css/jigsaw.css">
 		<link rel="stylesheet" type="text/css" href="/css/index.css"/>
-		
+
 	</head>
+    <script type="text/javascript">
+        function checkPhone(){
+            var name = document.getElementById('na').value;
+            $("#a1").html("");
+            if(!(/^[\u4e00-\u9fa5]{2,6}$/.test(name))){
+                $("#a1").html("<img  src='/img/cw.png' style='height:20px;width:20px'/>");
+                return false;
+            }else if (name=="") {
+                alert("当前为空")
+
+            }else {
+                $("#a1").html("<img src='/img/zq.png' style='height:20px;width:20px' />");
+            }
+        }
+    </script>
 	<body>
 		<div class="bg1"></div>
+
 		<div class="gyl">
 		        CRM管理系统
 		    <div class="gy2" >打造国内最具规模的、最专业的供CRM客户管理平台 </div>
 		</div>
-        <form action="/lonig.do" method="get">
-		<div class="bg">
+            <form class="layui-form" action="/selectyh.do"  enctype="multipart/form-data" method="get">
+            <div class="bg"  style="height: 666px">
 
 			<div class="wel">用户登录</div>
 
@@ -25,11 +42,11 @@
 
 
 	        <div class="user">
-	       	    <div id="yongu" style="">用户名</div>
+	       	    <div id="yongu" style="">账号</div>
 	       	    <input  type="text" name="username" />
 	        </div>
 	        <div class="password" >
-	        	<div id="yonghu" >密&nbsp;&nbsp;&nbsp;码</div>
+	        	<div id="yonghu" >密码</div>
 	       	    <input class="" type="password" name="password"/>
 	        </div>
 	        <div class="rem" >
@@ -43,8 +60,27 @@
 	       	    	<a style="font-size: 11px;" href="#">忘记密码？</a>
 	       	    </div>
 	        </div>
-	        <input class="btn" type="submit" value="登录" />
+
+      <div class="container">
+                <div id="captcha" style="position: relative;margin-top: 235px"></div>
+                <div id="msg"></div>
+            </div>
+	       <input class="btn" type="submit" style="margin-top: 245px" value="登录" />
 		</div>
     </form>
+        <script type="text/javascript" src="/js/jigsaw.js"></script>
+        <script type="text/javascript">
+            jigsaw.init(document.getElementById('captcha'), function () {
+              /*  document.getElementById('msg').innerHTML = '登录成功！'*/
+            })
+        </script>
+        <script>
+            //Demo
+            layui.use(['form','upload','jquery'], function(){
+                var form = layui.form;
+                var upload = layui.upload;
+                var $=layui.jquery;
+            });
+        </script>
 	</body>
 </html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayu.management.mapper.TbInvoiceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huayu.management.entity.TbInvoice">
+        <id column="invoiceid" property="invoiceid" />
+        <result column="theme" property="theme" />
+        <result column="step" property="step" />
+        <result column="personliable
+责任人
+personliable" property="personliable
+责任人
+personliable" />
+        <result column="participants" property="participants" />
+        <result column="detailedaddress" property="detailedaddress" />
+        <result column="nameofapplicant" property="nameofapplicant" />
+        <result column="department" property="department" />
+        <result column="applicatdate" property="applicatdate" />
+        <result column="technicalterms" property="technicalterms" />
+        <result column="unitname" property="unitname" />
+        <result column="associated" property="associated" />
+        <result column="invoicetype" property="invoicetype" />
+        <result column="identification" property="identification" />
+        <result column="accountnum" property="accountnum" />
+        <result column="addressnum" property="addressnum" />
+        <result column="invoiceamount" property="invoiceamount" />
+        <result column="amountinwords" property="amountinwords" />
+        <result column="invoicedate" property="invoicedate" />
+        <result column="invoicenumber" property="invoicenumber" />
+        <result column="enclosure" property="enclosure" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        invoiceid, theme, step, personliable
+责任人
+personliable, participants, detailedaddress, nameofapplicant, department, applicatdate, technicalterms, unitname, associated, invoicetype, identification, accountnum, addressnum, invoiceamount, amountinwords, invoicedate, invoicenumber, enclosure
+    </sql>
+
+</mapper>

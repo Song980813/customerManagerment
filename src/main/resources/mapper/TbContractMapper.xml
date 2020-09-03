@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayu.management.mapper.TbContractMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huayu.management.entity.TbContract">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="contract" property="contract" />
+        <result column="contract_code" property="contractCode" />
+        <result column="sum" property="sum" />
+        <result column="contract_date" property="contractDate" />
+        <result column="effective_date" property="effectiveDate" />
+        <result column="expiration_time" property="expirationTime" />
+        <result column="customer_people" property="customerPeople" />
+        <result column="customer_phone" property="customerPhone" />
+        <result column="cell_phone" property="cellPhone" />
+        <result column="email_qq" property="emailQq" />
+        <result column="technical_term" property="technicalTerm" />
+        <result column="commerce_clause" property="commerceClause" />
+        <result column="accessory" property="accessory" />
+        <result column="department" property="department" />
+        <result column="associate" property="associate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, contract, contract_code, sum, contract_date, effective_date, expiration_time, customer_people, customer_phone, cell_phone, email_qq, technical_term, commerce_clause, accessory, department, associate
+    </sql>
+
+</mapper>

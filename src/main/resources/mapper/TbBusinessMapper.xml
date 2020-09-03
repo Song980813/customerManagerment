@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayu.management.mapper.TbBusinessMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huayu.management.entity.TbBusiness">
+        <id column="sid" property="sid" />
+        <result column="bo_name" property="boName" />
+        <result column="coustomer_resource" property="coustomerResource" />
+        <result column="amount" property="amount" />
+        <result column="closingdate" property="closingdate" />
+        <result column="coustomer" property="coustomer" />
+        <result column="deptment" property="deptment" />
+        <result column="job" property="job" />
+        <result column="telephone" property="telephone" />
+        <result column="mobile_phone" property="mobilePhone" />
+        <result column="email_qq" property="emailQq" />
+        <result column="requirements" property="requirements" />
+        <result column="enclosure" property="enclosure" />
+        <result column="department" property="department" />
+        <result column="charge_person" property="chargePerson" />
+        <result column="participants" property="participants" />
+        <result column="focus_people" property="focusPeople" />
+        <result column="state" property="state" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        sid, bo_name, coustomer_resource, amount, closingdate, coustomer, deptment, job, telephone, mobile_phone, email_qq, requirements, enclosure, department, charge_person, participants, focus_people, state
+    </sql>
+
+</mapper>

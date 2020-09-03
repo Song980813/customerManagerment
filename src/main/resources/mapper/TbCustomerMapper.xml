@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayu.management.mapper.TbCustomerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huayu.management.entity.TbCustomer">
+        <id column="cid" property="cid" />
+        <result column="customer_name" property="customerName" />
+        <result column="pinyin" property="pinyin" />
+        <result column="classification" property="classification" />
+        <result column="customer_source" property="customerSource" />
+        <result column="industry" property="industry" />
+        <result column="customer_website" property="customerWebsite" />
+        <result column="country_address" property="countryAddress" />
+        <result column="city" property="city" />
+        <result column="address" property="address" />
+        <result column="postalcode" property="postalcode" />
+        <result column="fax" property="fax" />
+        <result column="contacts" property="contacts" />
+        <result column="department" property="department" />
+        <result column="job" property="job" />
+        <result column="office_phone" property="officePhone" />
+        <result column="telephone" property="telephone" />
+        <result column="email_qq" property="emailQq" />
+        <result column="legal_person" property="legalPerson" />
+        <result column="capital" property="capital" />
+        <result column="notes" property="notes" />
+        <result column="bankcard" property="bankcard" />
+        <result column="account_name" property="accountName" />
+        <result column="deposit" property="deposit" />
+        <result column="bank_address" property="bankAddress" />
+        <result column="duty_paragraph" property="dutyParagraph" />
+        <result column="bank_phone" property="bankPhone" />
+        <result column="startime" property="startime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cid, customer_name, pinyin, classification, customer_source, industry, customer_website, country_address, city, address, postalcode, fax, contacts, department, job, office_phone, telephone, email_qq, legal_person, capital, notes, bankcard, account_name, deposit, bank_address, duty_paragraph, bank_phone, startime
+    </sql>
+
+</mapper>

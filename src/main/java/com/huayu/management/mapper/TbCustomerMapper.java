@@ -2,7 +2,6 @@ package com.huayu.management.mapper;
 
 import com.huayu.management.entity.TbCustomer;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -10,9 +9,8 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author Song
- * @since 2020-08-28
+ * @since 2020-09-02
  */
-@Mapper
 public interface TbCustomerMapper extends BaseMapper<TbCustomer> {
 
 }

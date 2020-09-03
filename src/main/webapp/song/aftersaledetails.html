@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>售后服务详情</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" charset="UTF-8" media="all">
+    <script src="/layui/layui.js"></script>
+</head>
+<style type="text/css">
+    #sp1{
+        float: left;
+        margin-top: 0px;
+    }
+    #sp2{
+        float: right;
+        margin-top: 0px;
+    }
+    body{
+        background-color: #347ebc;
+    }
+</style>
+<body>
+<center>
+    <form class="layui-form" action="">
+    <div style="background: #f6fffe;width: 850px">
+        <div class="layui-form-item">
+            <div style="background-color: #ebccd1;width: 700px;border-width: 1px">
+                <div id="sp1">售后服务详情</div>
+                <div id="sp2">
+                    <button style="background-color:white;width: 80px">返回</button>
+                    <button style="background-color:white;width: 80px">刷新</button>
+                </div>
+            </div><br><br>
+            <div style="background-color: #fcf8e3;width: 700px;border-width: 1px">基本信息</div>
+            <br/>
+            <div class="layui-inline" style="width: 700px">
+                <label class="layui-form-label">主题</label>
+                <div class="layui-input-block">
+                    <input type="text" name="theme" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:600px" readonly>
+                </div><br>
+                <span style="float: left;margin-left: 10px">步骤: [[${}]] &nbsp;&nbsp;责任人: [[${}]]&nbsp;&nbsp;参与人:[[${}]]</span>
+            </div>
+
+        </div>
+        <div style="background-color: #fcf8e3;width: 700px;border-width: 1px;">售后服务信息</div>
+        <br/>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">客户名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="customername" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">合同编号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="contractno" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="width: 700px">
+            <div class="layui-inline">
+                <label class="layui-form-label">合同主要信息</label>
+                <div class="layui-input-block">
+                    <input type="text" name="mcinformation" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:600px" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">对方联系人</label>
+                <div class="layui-input-block">
+                    <input type="text" name="conperson" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">固定电话</label>
+                <div class="layui-input-block">
+                    <input type="text" name="fixtelephone" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">移动电话</label>
+                <div class="layui-input-block">
+                    <input type="text" name="mobphone" th:value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+            <!--签约日期-->
+            <div class="layui-inline">
+                <label class="layui-form-label">邮件/QQ</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="emailqq" th:value="" class="layui-input"  placeholder="请输入" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">服务类型</label>
+                <div class="layui-input-inline">
+                    <select name="servicetype">
+                        <option th:value="" >[[${}]]</option>
+                        <option value="故障申报">故障申报</option>
+                        <option value="业务咨询">业务咨询</option>
+                        <option value="实施或培训">实施或培训</option>
+                        <option value="主动关怀">主动关怀</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">服务方式</label>
+                <div class="layui-input-inline">
+                    <select name="servicem">
+                        <option th:value="">[[${}]]</option>
+                        <option value="故障申报">故障申报</option>
+                        <option value="业务咨询">业务咨询</option>
+                        <option value="实施或培训">实施或培训</option>
+                        <option value="主动关怀">主动关怀</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">开始时间</label>
+                <div class="layui-input-block">
+                    <input type="text" name="startime" th:value="" placeholder="yyyy-mm-dd" id="test1" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">结束时间</label>
+                <div class="layui-input-block">
+                    <input type="text" name="endtime" th:value="" placeholder="yyyy-mm-dd" id="test2" autocomplete="off" class="layui-input"style="width:200px" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text" style="width: 900px">
+            <div class="layui-input-block">
+                <label class="layui-form-label">服务内容</label>
+                <textarea placeholder="请输入内容" name="sercontent" th:value="" class="layui-textarea" style="width: 500px" readonly></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text"  style="width: 900px">
+            <div class="layui-input-block">
+                <label class="layui-form-label">客户反馈</label>
+                <textarea placeholder="请输入内容" name="cusfeedba" th:value="" class="layui-textarea" style="width: 500px" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">服务人员</label>
+                <div class="layui-input-block">
+                    <input type="text" name="serperson" th:value="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px" readonly>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">服务评分</label>
+                <div  class="layui-input-block">
+                    <input type="radio" name="serrating" value="1">1分
+                    <input type="radio" name="serrating" value="2">2分
+                    <input type="radio" name="serrating" value="3">3分
+                    <input type="radio" name="serrating" value="4">4分
+                    <input type="radio" name="serrating" value="5">5分
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">附件</label>
+                <div  class="layui-input-block">
+                    <input type="file" name="relattachm" value="">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-radius" lay-submit lay-filter="*">保存</button>
+                <button type="button" class="layui-btn layui-btn-radius">转服务人员处理</button>
+                <button type="button" class="layui-btn layui-btn-radius">本次服务完成</button>
+                <button type="button" class="layui-btn layui-btn-radius">取消</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</center>
+
+<!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+
+
+</form>
+
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var laydate = layui.laydate;
+        var form = layui.form;
+        var laydate = layui.laydate;
+        var layer = layui.layer
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        laydate.render({
+            elem: '#test2'
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
+</html>

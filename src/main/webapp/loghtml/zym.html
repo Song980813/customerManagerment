@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页面</title>
+
+    <link rel="stylesheet" type="text/css" href="/css1/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css1/demo.css" />
+
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="/css1/component.css" />
+    <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+    <script src="/js1/modernizr.custom.25376.js"></script>
+    <script src="/js/echarts.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+</head>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document .getElementById('main'));
+        console.log(`123${myChart}`)
+        // 指定图表的配置项和数据
+        var option = {
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    roseType: 'angle',
+                    data:[
+                        {value:235, name:'已成交'},
+                        {value:274, name:'已丢单'},
+                        {value:310, name:'已搁置'},
+                        {value:335, name:'进行中'}
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    })
+</script>
+<style type="text/css">
+</style>
+<body>
+
+<div id="perspective" class="perspective effect-airbnb">
+
+    <div class="container">
+        <div class="wrapper">
+            <button id="showMenu">显示菜单</button>
+            <iframe frameborder=0 scrolling=no height="600px" width="100%" src="/song/homepage2.html"></iframe>
+
+        </div><!-- wrapper -->
+    </div><!-- /container -->
+
+    <nav class="outer-nav left vertical">
+        <a href="/loghtml/1.html" class="icon-home">我的桌面</a>
+        <a href="/loghtml/customer.html"class="icon-news">客户管理</a>
+        <a href="/business/mybusiness.html" class="icon-image">我的商机</a>
+        <a href="/business/business.html" class="icon-upload">全部商机</a>
+        <a href="" class="icon-star">我的跟单</a>
+        <a href="#" class="icon-mail">全部跟单</a>
+        <a href="#" class="icon-lock">全部讨论帖子</a>
+        <a href="#" class="icon-mail">我的合同</a>
+        <a href="#" class="icon-mail">全部合同</a>
+        <a href="#" class="icon-lock">售后服务</a>
+        <a href="#" class="icon-lock">统计分析</a>
+        <a href="#" class="icon-lock">安全退出</a>
+    </nav>
+
+</div><!-- /perspective -->
+
+<script src="/js1/classie.js"></script>
+<script src="/js1/menu.js"></script>
+
+
+</body>
+</html>

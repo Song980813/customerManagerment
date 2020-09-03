@@ -68,6 +68,8 @@
      right: 2.5rem;
      display: flex;
 }
+
+
 .btn{
      position: absolute;
      top: 16rem;
@@ -89,7 +91,7 @@
 }
 .wel{
 	width: 375px;
-	height: 35px;
+	height: 355px;
 	color: #347ebc;
     font-size: 1.5rem;
     position: absolute;

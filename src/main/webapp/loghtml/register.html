@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="/css/index.css"/>
-		
+        <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+        <script src="/layui/layui.js" charset="UTF-8"></script>
+		<link rel="stylesheet" type="text/css" href="/css/log.css"/>
 	</head>
 	<body>
 		<div class="bg1"></div>
@@ -12,28 +13,92 @@
 		        CRM注册平台
 		    <div class="gy2" >打造国内最具规模的、最专业的供CRM客户管理平台 </div>
 		</div>
-        <form action="/lonig.do" method="get">
-		<div class="bg">
-
-			<div class="wel">用户登录</div>
-
+            <form class="layui-form" action="/selectyh.do" enctype="multipart/form-data" method="post">
+		<div class="bg"  style="height: 750px">
+			<div class="wel">用户注册</div>
             <div class="" >
                 <div style="font-size: 11px;margin-top: 11px;">
                     <a style="font-size: 11px;" href="/loghtml/loging.html"><font size="52">登录</font></a>
                 </div>
             </div>
-
-
 	        <div class="user">
-	       	    <div id="yongu" style="">用户名</div>
+	       	    <div id="yongu" style="">账号</div>
 	       	    <input  type="text" name="username" />
 	        </div>
 	        <div class="password" >
 	        	<div id="yonghu" >密&nbsp;&nbsp;&nbsp;码</div>
 	       	    <input class="" type="password" name="password"/>
 	        </div>
-	        <input class="btn" type="submit" value="注册" />
+            <div class="hh">
+                <div id="yong" style="">姓&nbsp;&nbsp;&nbsp;名</div>
+                <input  type="text" name="name" />
+            </div>
+
+            <div class="layui-form-item" style="margin-top: 245px">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="sex" value="男" title="男">
+                    <input type="radio" name="sex" value="女" title="女" checked>
+                </div>
+            </div>
+            <div class="dhhm">
+                <div id="dhhm" style="">&nbsp;&nbsp;电话号码</div>
+                <input  type="text" name="dhhm" />
+            </div>
+            <div class="layui-form-item" style="margin-top: 75px">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="js" value="管理员" title="管理员">
+                    <input type="radio" name="js" value="用户" title="用户" checked>
+                </div>
+            </div>
+
+            <input type="hidden" name="tx" id="fieid" value="">
+            <div class="layui-upload">
+                <button type="button"class="layui-btn" id="test1" style="background-color:#347ebc; margin-top: 9px">上传图片</button>
+                <div class="layui-upload-list">
+                    <img class="layui-upload-img" id="demo1" style="width: 100px;height: 100px">
+                    <p id="demoText"></p>
+                </div>
+            </div>
+            <input class="btn" type="submit" value="注册"/>
 		</div>
     </form>
-	</body>
+
+        <script>
+            //Demo
+            layui.use(['form','upload','jquery'], function(){
+                var form = layui.form;
+                var upload = layui.upload;
+                var $=layui.jquery;
+
+                //文件上传
+                //普通图片上传
+                var uploadInst = upload.render({
+                    elem: '#test1'
+                    ,url: "/sdhsj.do"
+                    ,before: function(obj){
+                        obj.preview(function(index, file, result){
+                            $('#demo1').attr('src', result); //图片链接（base64
+
+                        });
+                    }
+                    ,done: function(res){
+                        console.log(res)
+                        if(res.code ==200){
+                            alert("成功")
+                            alert("data"+res.data)
+                            layer.msg("上传成功")
+                            $("#fieid").val(res.data)
+                        }
+                        //上传成功
+                    }
+                });
+                form.on('submit(formDemo)', function(data){
+                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                    parent.layer.close(index); //再执行关闭
+                });
+            });
+        </script>
+    </body>
 </html>
