@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>收入登记</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <!----------------------------收入登记-------------------->
+</head>
+<style type="text/css">
+    .d1{
+        float: left;
+    }
+    .d2{
+      float: right;
+    }
+    .d3{
+        position:absolute;
+        top: 0px;
+        left:120px;
+        border: 1px black solid;
+        width: 1100px;
+        height: 700px;
+    }
+    /*top 和上面的距离
+  left 左边的距离
+  border 定义边框的属性1px边框的宽度 black颜色solid样式
+  width 宽
+  heigth 高
+*/
+</style>
+<body>
+<div class="d3">
+<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+            <div class="layui-form-item">
+                <h1 class="d1">收入登记</h1>
+                <div class="d2">
+                    <button type="reset" class="layui-btn layui-btn-primary">返回</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">刷新</button>
+                </div>
+            </div>
+            <hr class="layui-bg-orange"><!--分割线-->
+            <center>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">收入日期</label>
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">收入分类</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">收入金额</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">大写</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">收款方式</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">登记人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">关联人员</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">关联部门</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+
+        <div class="layui-inline">
+            <label class="layui-form-label">对方单位</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">关联合同</label>
+            <div class="layui-input-block">
+                <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item layui-form-text" style="width: 900px">
+        <div class="layui-input-block">
+            <label class="layui-form-label">收入说明</label>
+            <textarea placeholder="最多输入200个字符" class="layui-textarea" style="width: 500px"></textarea>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-radius" lay-submit lay-filter="*">确定</button>
+            <button type="button" class="layui-btn layui-btn-radius">取消</button>
+        </div>
+    </div>
+            </center>
+</form>
+<script src="/layui/layui.js"></script>
+</div>
+</body>
+</html>
+</html>
