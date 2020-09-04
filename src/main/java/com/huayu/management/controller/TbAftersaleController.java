@@ -1,6 +1,7 @@
 package com.huayu.management.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.huayu.management.bo.LayuiEntity;
 import com.huayu.management.entity.TbAftersale;
 import com.huayu.management.service.ITbAftersaleService;
@@ -27,14 +28,8 @@ public class TbAftersaleController {
     ITbAftersaleService aftersaleService;
 
     @RequestMapping("selectall")
-    public LayuiEntity queryAll(){
-        List<TbAftersale> list=aftersaleService.list();
-        LayuiEntity layuiEntity= new LayuiEntity();
-        layuiEntity.setCode(0);
-        layuiEntity.setMsg("查询成功");
-        layuiEntity.setCount(list.size());
-        layuiEntity.setData(list);
-        return layuiEntity;
+    public LayuiEntity queryAll(Integer page,Integer limit,TbAftersale tbAftersale){
+        return aftersaleService.selectAll(page,limit,tbAftersale);
     }
 
 }
