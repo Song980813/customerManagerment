@@ -40,7 +40,7 @@
     </div>
 </div>
 <div id="d2" style="margin-left: 200px;margin-top: 30px">
-    <form class="layui-form">
+    <form class="layui-form" id="seach">
         <div class="layui-input-inline">
             <select name="no">
                 <option value="">请选择</option>
@@ -58,8 +58,8 @@
             <button type="submit" class="layui-btn layui-btn-primary layui-btn-radius"  lay-filter="demo1"><i class="layui-icon-search"></i>查找</button>
         </div>
         <div class="layui-input-block layui-inline" style="float: right">
-            <button  type="button" class="layui-btn layui-btn-primary layui-btn-sm">小型按钮</button>
-            <button  type="button" class="layui-btn layui-btn-primary layui-btn-sm">小型按钮</button>
+            <button  type="submit" class="layui-btn layui-btn-primary layui-btn-sm">新增售后服务</button>
+            <button  type="button" class="layui-btn layui-btn-primary layui-btn-sm">刷新</button>
         </div>
     </form>
 
@@ -67,6 +67,8 @@
 </div>
 
 <script src="/layui/layui.js"></script>
+<script type="text/html" id="">
+</script>
 <script>
     layui.use(['table','form'], function(){
         var table = layui.table;
@@ -79,21 +81,24 @@
             ,page: true //开启分页
             ,cols: [[ //表头
                  {field: 'id', title: 'id', width:210,hide:true}
-                ,{field: 'theme', title: '主题', width:270,event:'viewReport'}
-                ,{field: 'servicetypev', title: '服务类型', width:250,}
+                ,{field: 'theme', title: '主题', width:270,templet: '<div><a class="iconfont icon-chakanbaogao" style="margin-left: 3%; color: #2196F3;border-radius: 5px; cursor: pointer;text-decoration: underline;" onclick="skip({{d.id}})">{{ d.theme }}</a></div>'}
+                ,{field: 'servicetype', title: '服务类型', width:250,}
                 ,{field: 'startime', title: '开始时间', width:250}
                 ,{field: 'serperson', title: '服务人员', width: 250}
                 ,{field: 'serrating', title: '服务评分', width: 250}
             ]]
         });
-        table.on('tool(demo)', function (obj) {
-            let event = obj.event;
-            if (event === "viewReport"){
-                // 处理你的业务逻辑
-                obj.id;
-            }
+        form.on('submit(seach)', function(data){
+            table.reload('demo', {
+                url: '/management/tb-aftersale/selectall.do'
+                ,where: data.field //设定异步数据接口的额外参数
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         });
     });
+    function skip(a){
+        window.location="/management/tb-aftersale/selectone.do?id="+a;
+    }
 </script>
 </body>
 </html>

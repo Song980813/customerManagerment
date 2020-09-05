@@ -109,5 +109,24 @@ public class TbBusiness implements Serializable {
      */
     private String state;
 
-
+    /**
+     * 客户ID
+     */
+    private String cid;
+    /**
+     *
+     */
+    private String cname;
+    /**
+     * 所属行业
+     */
+    private String industry;
+    /**
+     * 所在城市
+     */
+    private String city;
+    /**
+     * 详细地址
+     */
+    private String address;
 }
