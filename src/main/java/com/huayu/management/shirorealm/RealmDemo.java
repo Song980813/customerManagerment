@@ -2,7 +2,7 @@ package com.huayu.management.shirorealm;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.huayu.management.entity.TbEmployee;
-import com.huayu.management.service.ITbEmployeeService;
+import com.huayu.management.mapper.TbEmployeeMapper;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class RealmDemo extends AuthorizingRealm {
     @Autowired
-    private  ITbEmployeeService employeeService;
+    private TbEmployeeMapper tbEmployeeMapper;
     /**
      * 认证
      * @param authenticationToken
@@ -27,7 +27,7 @@ public class RealmDemo extends AuthorizingRealm {
         QueryWrapper queryWrapper=new QueryWrapper();
         System.out.println("當前用戶名");
         queryWrapper.eq("usernum",username);
-        TbEmployee login=(TbEmployee)employeeService.getOne(queryWrapper);
+        TbEmployee login=(TbEmployee)tbEmployeeMapper.selectOne(queryWrapper);
         System.out.println("當前"+login.getUsernum()+login.getPassword());
         if(login==null){
             System.out.println("用戶不存在");

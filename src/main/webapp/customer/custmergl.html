@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="/layui/css/layui.css" charset="UTF-8" media="all">
+    <link rel="stylesheet" type="text/css" href="/css1/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css1/demo.css" />
+
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="/css1/component.css" />
+    <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+    <script src="/js1/modernizr.custom.25376.js"></script>
+</head>
+<style type="text/css">
+
+    #u777_text {
+        border-width: 0px;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        width: 238px;
+        word-wrap: break-word;
+    }
+
+    #u211 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 91px;
+        width: 260px;
+        height: 184px;
+    }
+    #u212 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 91px;
+        width: 260px;
+        height: 40px;
+        font-family: '微软雅黑 Bold', '微软雅黑';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        text-align: left;
+    }
+    #u213 {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 0px;
+        height: 0px;
+    }
+    #u211_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 250px;
+        height: 236px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 1);
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(223, 223, 223, 1);
+        border-radius: 4px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    #u212_div {
+        /* border-width: 0px; */
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 250px;
+        height: 40px;
+        background: inherit;
+        background-color: rgba(245, 245, 245, 1);
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(223, 223, 223, 1);
+        border-radius: 4px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        font-family: '微软雅黑 Bold', '微软雅黑';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        text-align: left;
+    }
+    #u215_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 57px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    #u215 {
+        position: absolute;
+        left: 81px;
+        top: 146px;
+        width: 57px;
+        height: 16px;
+        border-width: 0px;
+    }
+    #u215_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 2px;
+        width: 57px;
+        white-space: nowrap;
+    }
+    #u214_img {
+        border-width: 0px;
+        position: absolute;
+        left: 45px;
+        top: 145px;
+        width: 24px;
+        height: 21px;
+    }
+    #u218 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 175px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u218_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u218_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 15px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u219 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u219_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u219_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 14px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u219 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+
+    #u23 {
+        border-width: 0px;
+        position: absolute;
+        left: 1px;
+        top: 259px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u210_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u210_text {
+        border-width: 0px;
+        position: absolute;
+        left: 77px;
+        top: 277px;
+        width: 71px;
+        white-space: nowrap;
+    }
+</style>
+<body>
+
+<div id="perspective" class="perspective effect-airbnb">
+
+    <div class="container" style="height: 111px">
+        <div class="wrapper"><!-- wrapper needed for scroll -->
+
+                    <button id="showMenu" style="background:#1E9FFF;">显示菜单</button>
+
+         <!--       <div class="column">
+                    <nav class="codrops-demos">
+                    </nav>
+                </div>-->
+            <!-- /main -->
+
+            <div id="u210" class="ax_default _图片">
+                <img id="u210_img" class="img " style="
+    margin-left: 25px;
+" src="/img/u81.png"> <p style="margin-top: -34px;margin-left: 55px;"><font style="font-family: '微软雅黑 Bold', '微软雅黑';font-weight:400" size="5">客户管理</font></p>
+            </div>
+            <div id="u211" class="ax_default box_1">
+                <div id="u211_div" class=""></div>
+            </div>
+            <div id="u212" class="ax_default box_1">
+                <div id="u212_div" class=""></div>
+                <div id="u777_text" class="text ">
+                    <p><span>分类</span></p>
+                </div>
+            </div>
+            <div id="u213" class="ax_default" data-left="47" data-top="141" data-width="91" data-height="21">
+
+                <!-- Unnamed (Shape) -->
+                <div id="u214" class="ax_default icon">
+                    <img id="u214_img" class="img " src="/img/u214.png">
+                </div>
+
+                <!-- Unnamed (Rectangle) -->
+                <div id="u215" class="ax_default label">
+                    <div id="u215_div" class=""></div>
+                    <div id="u215_text" class="text " style="left: 0px; width: 58px; transform-origin: 29px 8px;">
+                        <p><span>所有分类</span></p>
+                    </div>
+                </div>
+                <div id="u21" class="ax_default icon">
+                    <img id="u21_img" class="img " src="/img/u214.png" style="
+    margin-top: 188px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u218" class="ax_default label">
+                    <div id="u218_div" class=""></div>
+                    <div id="u218_text" class="text ">
+                        <a href="addcustomer.html"><p id="cache30" style=""><span id="cache31" style="color: #1E9FFF">客户分类一</span></p></a>
+                    </div>
+                </div>
+
+                <div id="u22" class="ax_default icon">
+                    <img id="u22_img" class="img " src="/img/u214.png" style="
+    margin-top: 22px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u219" class="ax_default label">
+                    <div id="u219_div" class=""></div>
+                    <div id="u219_text" class="text ">
+                        <a href="addcustomer.html"><p id="cache32" style=""><span id="cache33" style="color: #1E9FFF">客户分类二</span></p></a>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div id="u23" class="ax_default icon">
+                <img id="u23_img" class="img " src="/img/u214.png" style="
+    margin-top: 17px;
+    margin-left: 43px;
+">
+            </div>
+            <div id="u220" class="ax_default label">
+                <div id="u210_div" class=""></div>
+                <div id="u210_text" class="text ">
+                    <a href="addcustomer.html"><p id="cache34" style=""><span id="cache35" style="color: #1E9FFF">客户分类三</span></p></a>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+            <form class="layui-form" action="" style="margin-left: 211px;    margin-top: -39px;" id="seach">
+
+            <div class="layui-inline">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-inline" style="width:210px;" >
+                    <select name="classification">
+                        <option value="">请选择</option>
+                        <option value="按客户名称">按客户名称</option>
+                        <option value="按拼音">按拼音</option>
+                        <option value="按客户来源">按客户来源</option>
+                        <option value="按国家/地区">按国家/地区</option>
+                        <option value="按所在城市">按所在城市</option>
+                        <option value="按所属行业">按所属行业</option>
+                    </select>
+                </div>
+            </div>
+                <div class="layui-inline">
+                    <div class="layui-input-block" style="width:388px;margin-left: 7px;">
+                        <input type="text" name="pinyin" value="" placeholder="请输入关键字" autocomplete="off" class="layui-input"style="width:500px">
+                    </div>
+                </div>
+
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left: 812px;width: 80px;margin-top: -49px;height: 35.5px">
+               查询
+                </button>
+            </form>
+            </div>
+<div style="float: right;margin-top:-10px;margin-right: 100px">
+            <table id="demo" lay-filter="test" style="margin-top: -1px;margin-left: 288px;"></table>
+</div>
+            <script src="/layui/layui.js" charset="UTF-8"></script>
+            <script>
+                layui.use(['table', 'form','layer','jquery','tree'], function() {
+                    var table = layui.table
+                    var form = layui.form;
+                    var  layer=layui.layer;
+                    var $=layui.jquery;
+                    var  tree=layui.tree;
+
+                    table.render({
+                        elem: '#demo'
+                        , height: 555
+                        , skin:top
+                        , url: '/management/tb-customer/selecrm.do' //数据接口
+                        , limit: "2"
+                        ,  page: true //开启分页
+                        , cols: [[ //表头
+                        /*    {field: '', title: '编号', width: 80, style: "height:77px",type:"checkbox", sort: true, fixed: 'left'},
+                            {field: 'id', title: 'ID', width: 80, style: "height:77px", sort: true}*/
+                            , {field: 'name', title: '客户名称', width: 216}
+                            , {field: 'age', title: '商机数', width: 122, sort: true}
+                            , {field: 'sex', title: '预计成交金额', width: 133}
+                            , {field: 'happy', title: '合同数', width: 99}
+                            , {field: 'cname', title: '合同金额', width: 133, sort: true}
+                            , {field: 'zname', title: '回款额', width: 136, sort: true}
+                            , {field: 'zname', title: '售后服务数', width: 136, sort: true}
+                            , {field: 'zname', title: '服务均分', width: 136, sort: true}
+                        ]]
+                    });
+                    form.on('submit(seach)', function(data){
+                        table.reload('demo', {
+                            url: '/management/tb-aftersale/selectall.do'
+                            ,where: data.field //设定异步数据接口的额外参数
+                        });
+                        return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+                    });
+
+
+
+                });
+
+
+            </script>
+
+
+<!--
+            <script>
+
+
+
+                layui.use(['form', 'layedit', 'laydate'], function(){
+                    var laydate = layui.laydate;
+                    var form = layui.form;
+                    var laydate = layui.laydate;
+                    var layer = layui.layer
+                    //常规用法
+                    laydate.render({
+                        elem: '#test1'
+                    });
+                });
+                layui.use('laydate', function(){
+                    var laydate = layui.laydate;
+                    //常规用法
+                    laydate.render({
+                        elem: '#test2'
+                    });
+                });
+
+            </script>
+-->
+
+
+
+    </div>
+        </div><!-- wrapper -->
+    </div><!-- /container -->
+
+    <nav class="outer-nav left vertical">
+        <a href="/loghtml/zym.html" class="icon-home">我的桌面</a>
+        <a href="/loghtml/customer.html" class="icon-news">客户管理</a>
+        <a href="#" class="icon-image">我的商机</a>
+        <a href="#" class="icon-upload">全部商机</a>
+        <a href="#" class="icon-star">我的跟单</a>
+        <a href="#" class="icon-mail">全部跟单</a>
+        <a href="#" class="icon-lock">全部讨论帖子</a>
+        <a href="#" class="icon-mail">我的合同</a>
+        <a href="#" class="icon-mail">全部合同</a>
+        <a href="#" class="icon-lock">售后服务</a>
+        <a href="#" class="icon-lock">统计分析</a>
+        <a href="#" class="icon-lock">安全退出</a>
+    </nav>
+
+</div><!-- /perspective -->
+
+<script src="/js1/classie.js"></script>
+<script src="/js1/menu.js"></script>
+
+</body>
+</html>

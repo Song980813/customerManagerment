@@ -1,7 +1,7 @@
 package com.huayu.management.service;
 
-import com.huayu.management.entity.TbEmployee;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.huayu.management.entity.TbEmployee;
 
 /**
  * <p>
@@ -11,6 +11,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Song
  * @since 2020-09-02
  */
+
 public interface ITbEmployeeService extends IService<TbEmployee> {
+
+    Integer addlog(TbEmployee tbEmployee);
 
 }
