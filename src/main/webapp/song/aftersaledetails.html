@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL-->
 <html  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
@@ -85,12 +86,12 @@
                 <div id="u482_div" class=""></div>
                 <div id="u482_text" class="text ">
                        <span style="margin-left: 215px;">新增售后服务
-                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left: 760px;width: 67px;">
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="comeback()" style="margin-left: 760px;width: 67px;">
                                 <i class="layui-icon layui-icon-left"></i>返回
                               </button>
-                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
+                            <a type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
                               <i class="layui-icon  layui-icon-refresh-3" style="color: #333333"></i>刷新
-                            </button>
+                            </a>
                           </span>
                 </div>
             </div>
@@ -172,7 +173,7 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">邮箱/QQ</label>
                         <div class="layui-input-block">
-                            <input type="text" name="emailqq" value="${after.emailqq}" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                            <input type="text" name="emailqq" th:value="${after.emailqq}" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
                         </div>
                     </div>
                 </div>
@@ -271,7 +272,9 @@
                         </div>
                     </div>
                 </div>
-
+                <br>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary " lay-fifter="doing" style="width: 120px">转服务人员处理</button>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" lay-fifter="over" style="width: 120px">本次服务完成</button>
             </form>
         </div>
     </div>
@@ -280,24 +283,70 @@
 
 <script src="/layui/layui.js" charset="UTF-8"></script>
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function(){
+    layui.use(['form', 'layedit', 'laydate','jquery'], function(){
         var laydate = layui.laydate;
         var form = layui.form;
         var laydate = layui.laydate;
         var layer = layui.layer
+        var $ = layui.query
         //常规用法
         laydate.render({
             elem: '#test1'
         });
-    });
-    layui.use('laydate', function(){
         var laydate = layui.laydate;
         //常规用法
         laydate.render({
             elem: '#test2'
         });
-    });
+        form.on('submit(doing)',function (data) {
+            $.ajax({
+                type : 'POST',
+                datatype : 'json',
+                url : '/management/tb-aftersale/update1.do',
+                data :data.field,
+                success : function (data) {
+                    if (data.code>0){
+                        window.location.href="/song/aftersale.html";
+                    }else{
+                        layer.open({
+                            type: 1,
+                            content: '转换状态失败',
+                            area:['300px','200px'],
+                            resize:false,
+                        })
+                    }
+                },
+                error: function(data) {
+                }
+            });
 
+        });
+        form.on('submit(over)',function (data) {
+            $.ajax({
+                type : 'POST',
+                datatype : 'json',
+                url : '/management/tb-aftersale/update2.do',
+                data :data.field,
+                success : function (data) {
+                    if (data.code>0){
+                        window.location.href="/song/aftersale.html";
+                    }else{
+                        layer.open({
+                            type: 1,
+                            content: '转换状态失败',
+                            area:['300px','200px'],
+                            resize:false,
+                        })
+                    }
+                },
+                error: function(data) {
+                }
+            });
+    });
+    });
+    function comeback() {
+        window.history.go(-1);
+    }
 </script>
 </body>
 </html>

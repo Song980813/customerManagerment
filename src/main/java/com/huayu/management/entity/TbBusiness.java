@@ -130,4 +130,8 @@ public class TbBusiness implements Serializable {
      * 详细地址
      */
     private String address;
+    /**
+     * 新增日期
+     */
+    private String addtime;
 }
