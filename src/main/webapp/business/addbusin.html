@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加客户</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" charset="UTF-8" media="all">
+</head>
+<style type="text/css">
+    #sp1{
+        float: left;
+        margin-top: 0px;
+    }
+    #sp2{
+        float: right;
+        margin-top: 0px;
+    }
+    body{
+        background-color: rgba(12, 103, 136, 0.93);
+    }
+    #u483_text {
+        border-width: 0px;
+        position: absolute;
+        top: 77px;
+        /* width: 1008px; */
+        word-wrap: break-word;
+    }
+    #u488_text {
+        border-width: 0px;
+        position: absolute;
+        top: 255px;
+        /* width: 1008px; */
+        word-wrap: break-word;
+    }
+
+
+    p {
+        margin: 0px;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: "kern" 1;
+        -webkit-font-feature-settings: "kern";
+        -moz-font-feature-settings: "kern";
+        -moz-font-feature-settings: "kern=1";
+        font-kerning: normal;
+    }
+
+    #u482_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 81px;
+        white-space: nowrap;
+    }
+    #u482 {
+        border-width: 0px;
+        position: absolute;
+        left: 40px;
+        top: 24px;
+        width: 81px;
+        height: 27px;
+        font-family: '微软雅黑';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+
+</style>
+<body>
+<center>
+    <div style="background: rgba(255, 255, 255, 1);width: 1100px;height: 1283px">
+        <div class="layui-form-item">
+                <div id="u482" class="ax_default _一级标题">
+                    <div id="u482_div" class=""></div>
+                    <div id="u482_text" class="text ">
+                        <p>
+                          <span style="margin-left: 215px;">新增商机
+
+
+
+<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left: 760px;width: 67px;">
+<a href="custmergl.html"><font style="color: #666666">返回</font></a>
+  </button>
+<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
+   刷新
+</button>
+                          </span>
+                        </p>
+                    </div>
+                </div>
+       <br><br>
+            <br><br>
+
+            <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
+                <div id="u483_text" class="text ">
+                    <p><span>客户信息</span></p>
+                </div>
+            </div>
+
+
+        <br/>
+            <form class="layui-form" action="/management/tb-customer/addcrm.do" method="get">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>客户名称</span></p></label>
+                <div class="layui-input-block">
+                    <input type="text" name="customerName" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">所属行业</label>
+                <div class="layui-input-inline" style="width:390px">
+                    <select name="industry">
+                        <option value="">请选者</option>
+                        <option value="IT|互联网|通讯|电子">IT|互联网|通讯|电子</option>
+                        <option value="金融|银行|保险">金融|银行|保险</option>
+                        <option value="房产|建筑|建设|物业">房产|建筑|建设|物业</option>
+                        <option value="广告|传媒|印刷出版">广告|传媒|印刷出版</option>
+                        <option value="消费零售|贸易|交通物流">消费零售|贸易|交通物流</option>
+                        <option value="加工制造|仪表设备">加工制造|仪表设备</option>
+                        <option value="管理咨询|教育科研|中介服务">管理咨询|教育科研|中介服务</option>
+                        <option value="医药生物|医疗保健">医药生物|医疗保健</option>
+                        <option value="酒店旅游">酒店旅游</option>
+                        <option value="能源矿产|石油化工">能源矿产|石油化工</option>
+                        <option value="政府|非赢利机构|科研">政府|非赢利机构|科研</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+       <!-- 对当前添加客户的进行分类-->
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">所在城市</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="city" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">详细地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="address" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                </div>
+                    <br><br>
+
+                    <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
+                        <div id="u488_text" class="text ">
+                            <p><span>商机信息</span></p>
+                        </div>
+                    </div>
+
+            </form>
+    </div>
+    </div>
+</center>
+<!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+
+<script src="/layui/layui.js" charset="UTF-8"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var laydate = layui.laydate;
+        var form = layui.form;
+       var laydate = layui.laydate;
+       var layer = layui.layer
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //常规用法
+        laydate.render({
+            elem: '#test2'
+        });
+    });
+
+</script>
+</body>
+</html>

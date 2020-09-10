@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>新增售后服务</title>
-    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/layui/css/layui.css" charset="UTF-8" media="all">
 </head>
 <style type="text/css">
     #sp1{
@@ -15,179 +15,284 @@
         margin-top: 0px;
     }
     body{
-        background-color: #347ebc;
+        background-color: rgba(12, 103, 136, 0.93);
     }
+    #u483_text {
+        border-width: 0px;
+        position: absolute;
+        top: 215px;
+        word-wrap: break-word;
+    }
+    .u483_text {
+        border-width: 0px;
+        position: absolute;
+        top: 1065px;
+        word-wrap: break-word;
+    }
+    #u473_text {
+        border-width: 0px;
+        position: absolute;
+        top: 77px;
+        word-wrap: break-word;
+    }
+    #u488_text {
+        border-width: 0px;
+        position: absolute;
+        top: 906px;
+        /* width: 1008px; */
+        word-wrap: break-word;
+    }
+
+
+    p {
+        margin: 0px;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: "kern" 1;
+        -webkit-font-feature-settings: "kern";
+        -moz-font-feature-settings: "kern";
+        -moz-font-feature-settings: "kern=1";
+        font-kerning: normal;
+    }
+
+    #u482_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 81px;
+        white-space: nowrap;
+    }
+    #u482 {
+        border-width: 0px;
+        position: absolute;
+        left: 40px;
+        top: 24px;
+        width: 81px;
+        height: 27px;
+        font-family: '微软雅黑';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+
 </style>
 <body>
 <center>
-    <form>
-    <div style="background: #f6fffe;width: 850px">
+    <div style="background: rgba(255, 255, 255, 1);width: 1100px;height: 100%">
         <div class="layui-form-item">
-            <div style="background-color: #ebccd1;width: 700px;border-width: 1px">
-                <div id="sp1">新增售后服务</div>
-                <div id="sp2">
-                    <button style="background-color:white;width: 80px">返回</button>
-                    <button style="background-color:white;width: 80px">刷新</button>
+            <div id="u482" class="ax_default _一级标题">
+                <div id="u482_div" class=""></div>
+                <div id="u482_text" class="text ">
+                       <span style="margin-left: 215px;">新增售后服务
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left: 760px;width: 67px;">
+                                <i class="layui-icon layui-icon-left"></i>返回
+                              </button>
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
+                              <i class="layui-icon  layui-icon-refresh-3" style="color: #333333"></i>刷新
+                            </button>
+                          </span>
                 </div>
-            </div><br><br>
-            <div style="background-color: #fcf8e3;width: 700px;border-width: 1px">基本信息</div>
+            </div>
+            <br><br>
+            <br><br>
+
+            <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
+                <div id="u473_text" class="text ">
+                    <p><span>基本信息</span></p>
+                </div>
+            </div>
+
             <br/>
-            <div class="layui-inline" style="width: 700px">
-                <label class="layui-form-label">主题</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:600px">
-                </div><br>
-               <span style="float: left;margin-left: 10px">步骤:  &nbsp;&nbsp;责任人: &nbsp;&nbsp;参与人:</span>
-            </div>
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>主题</span></p></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" value="" placeholder="" autocomplete="off" class="layui-input"style="width:910px">
+                        </div>
+                    </div><br>
+                    <div style="float: left;margin-left: 98px">步骤：责任人：参与人：</div>
+                </div>
+                <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
+                    <div id="u483_text" class="text ">
+                        <p><span>售后服务信息</span></p>
+                    </div>
+                </div>
 
-        </div>
-        <div style="background-color: #fcf8e3;width: 700px;border-width: 1px;">售后服务信息</div>
-        <br/>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">客户名称</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                <br/>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>客户名称</span></p></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="theme" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">合同编号</label>
+                        <div class="layui-input-inline" style="width:390px">
+                            <select name="contractno">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">合同编号</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">合同主要信息</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="mcinformation" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:910px" readonly>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">对方联系人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="conperson" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px" >
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">固定电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="fixtelephone" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px" >
+                        </div>
+                    </div>
+                </div>
 
-        <div class="layui-form-item" style="width: 700px">
-            <div class="layui-inline">
-                <label class="layui-form-label">合同主要信息</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:600px">
+                <div class="layui-form-item"><div class="layui-inline">
+                    <label class="layui-form-label">移动电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">对方联系人</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">邮箱/QQ</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">固定电话</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
-                </div>
-            </div>
-        </div>
 
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">移动电话</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">服务类型</label>
+                        <div class="layui-input-inline"style="width:390px">
+                            <select name="servicetype">
+                                <option value="" >请选择</option>
+                                <option value="故障申报">故障申报</option>
+                                <option value="业务咨询">业务咨询</option>
+                                <option value="实施或培训">实施或培训</option>
+                                <option value="主动关怀">主动关怀</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">服务方式</label>
+                        <div class="layui-input-inline" style="width:390px">
+                            <select name="servicem">
+                                <option value="">请选择</option>
+                                <option value="故障申报">故障申报</option>
+                                <option value="业务咨询">业务咨询</option>
+                                <option value="实施或培训">实施或培训</option>
+                                <option value="主动关怀">主动关怀</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!--签约日期-->
-            <div class="layui-inline">
-                <label class="layui-form-label">邮件/QQ</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="" value="" class="layui-input"  placeholder="请输入">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">开始时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="startime" value="" placeholder="yyyy-mm-dd" id="test1" autocomplete="off" class="layui-input"style="width:390px" >
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">结束时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="endtime" value="" placeholder="yyyy-mm-dd" id="test2" autocomplete="off" class="layui-input"style="width:390px" >
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">服务类型</label>
-                <div class="layui-input-inline">
-                    <select>
-                        <option value="">请选者</option>
-                        <option value="故障申报">故障申报</option>
-                        <option value="业务咨询">业务咨询</option>
-                        <option value="实施或培训">实施或培训</option>
-                        <option value="主动关怀">主动关怀</option>
-                        <option value="其他">其他</option>
-                    </select>
+                <div class="layui-form-item layui-form-text">
+                    <div class="layui-input-block">
+                        <label class="layui-form-label">服务内容</label>
+                        <textarea placeholder="请输入内容" name="sercontent" value="" class="layui-textarea" style="width: 910px" readonly></textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">服务方式</label>
-                <div class="layui-input-inline">
-                    <select>
-                        <option value="">请选者</option>
-                        <option value="故障申报">故障申报</option>
-                        <option value="业务咨询">业务咨询</option>
-                        <option value="实施或培训">实施或培训</option>
-                        <option value="主动关怀">主动关怀</option>
-                        <option value="其他">其他</option>
-                    </select>
-                </div>
-            </div>
-        </div>
 
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">开始时间</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="yyyy-mm-dd" autocomplete="off" id="test1" class="layui-input"style="width:200px">
-                </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">结束时间</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" value="" placeholder="yyyy-mm-dd" autocomplete="off" id="test2" class="layui-input"style="width:200px">
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item layui-form-text" style="width: 900px">
-            <div class="layui-input-block">
-                <label class="layui-form-label">服务内容</label>
-                <textarea placeholder="请输入内容" class="layui-textarea" style="width: 500px"></textarea>
-            </div>
-        </div>
-        <div class="layui-form-item layui-form-text"  style="width: 900px">
-            <div class="layui-input-block">
-                <label class="layui-form-label">客户反馈</label>
-                <textarea placeholder="请输入内容" class="layui-textarea" style="width: 500px"></textarea>
-            </div>
-        </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <label class="layui-form-label">客户反馈</label>
+                        <textarea placeholder="请输入内容" name="sercontent" value="" class="layui-textarea" style="width: 910px" ></textarea>
+                    </div>
 
-        <div class="layui-form-item">
+                </div>
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">服务人员</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="serperson" value="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:390px" >
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">服务评分</label>
+                        <div  class="layui-input-block" style="width: 390px">
+                            <input type="radio" name="serrating" value="1">1分
+                            <input type="radio" name="serrating" value="2">2分
+                            <input type="radio" name="serrating" value="3">3分
+                            <input type="radio" name="serrating" value="4">4分
+                            <input type="radio" name="serrating" value="5">5分
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item" style="width: 600px;margin-right: 1330px">
+                    <label class="layui-form-label">附件</label>
+                    <div  class="layui-input-block">
+                        <input type="file" name="relattachm" value="" style="width: 390px">
+                    </div>
+                </div>
+                <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
+                    <div class="u483_text" class="text ">
+                        <p><span>处理流程日志</span></p>
+                    </div>
+                </div>
+                <div class="layui-inline"  style="float: left;margin-top: 30px;margin-left: 50px;border:1px solid black;">
+                    <div style="width: 500px;height: 30px;background-color: #f0f0f0;border-radius:5px 5px 0 0;text-align: left ">【处理过程】<a style="float: right;color: #01AAED" href="#">查看流程图</a></div>
+                    <div style="width: 500px;height: 460px;border: 1px;border-top: 0px;border-radius:0 0 5px 5px;text-align: center">
+                    </div>
+                </div>
+
             <div class="layui-inline">
-                <label class="layui-form-label">服务人员</label>
-                <div class="layui-input-block">
-                    <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
+                <div   style="margin-top: 30px;border:1px solid black;">
+                    <div style="width: 400px;height: 30px;background-color: #f0f0f0;border-radius:5px 5px 0 0;text-align: left ">【父事务】</div>
+                    <div style="width: 400px;height: 200px;border: 1px;border-top: 0px;border-radius:0 0 5px 5px;text-align: center">
+                    </div>
+                </div>
+                <div class="layui-form-item"  style="float: left;margin-top: 30px;border:1px solid black;">
+                    <div style="width: 400px;height: 30px;background-color: #f0f0f0;border-radius:5px 5px 0 0;text-align: left ">【子事务】</div>
+                    <div style="width: 400px;height: 200px;border: 1px;border-top: 0px;border-radius:0 0 5px 5px;text-align: center">
+                    </div>
                 </div>
             </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">服务评分</label>
-                <div  class="layui-input-block">
-                    <input type="radio" name="" value="1">1分
-                    <input type="radio" name="" value="2">2分
-                    <input type="radio" name="" value="3">3分
-                    <input type="radio" name="" value="4">4分
-                    <input type="radio" name="" value="5">5分
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-input-block">
-                <button class="layui-btn layui-btn-radius" lay-submit lay-filter="*">保存</button>
-                <button type="button" class="layui-btn layui-btn-radius">转服务人员处理</button>
-                <button type="button" class="layui-btn layui-btn-radius">本次服务完成</button>
-                <button type="button" class="layui-btn layui-btn-radius">取消</button>
-            </div>
+                <br>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="width: 90px" lay-fifter="editor">保存</button>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary " style="width: 120px">转服务人员处理</button>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 120px">本次服务完成</button>
+                <a href="#" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 90px">取消</a>
+
+            </form>
         </div>
     </div>
-    </form>
 </center>
+<!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
 
-    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
-
-
-</form>
-<script src="/layui/layui.js"></script>
-
+<script src="/layui/layui.js" charset="UTF-8"></script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
         var laydate = layui.laydate;
@@ -201,10 +306,50 @@
         laydate.render({
             elem: '#test2'
         });
+    form.on("submit(editor)",function(data){
+        console.log(data.field);
+        $.ajax({
+            url: '/management/tb-aftersale/addnew.do',
+            data: data.field,
+            dataType:'json',
+            type: 'get',
+            success:function(rs){
+                if(rs.code > 0){
+                    layui.open({
+                        type: 1,
+                        content: '新增售后服务成功',
+                        area:['300px','200px'],
+                        resize:false,
+                        btn: ['查看详情','返回'],
+                        yes:function(index){
+                            stamp();
+                        },
+                        end:function () {
+                            comeback();
+                        }
+                    })
+                }else{
+                    layui.open({
+                        type: 1,
+                        content: '新增售后服务失败',
+                        area:['300px','200px'],
+                        resize:false,
+                        btn: ['重试','返回'],
+                        end:function () {
+                            comeback();
+                        }
+                    })
+                }
+            }
+        })
+    })
     });
-
-
+    function stamp(){
+        window.location = "/management/tb-aftersale/queryone.do";
+    }
+    function comeback() {
+        window.history.back();
+    }
 </script>
 </body>
-</html>
 </html>

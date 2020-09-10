@@ -14,5 +14,6 @@ import com.huayu.management.entity.TbCustomer;
  */
 public interface ITbCustomerService extends IService<TbCustomer> {
 
-  LayuiEntity selequu(Integer page,Integer limit);
+  LayuiEntity selequu(Integer page,Integer limit,String classification,String pinyin);
+    Integer update1(TbCustomer tbCustomer);
 }
