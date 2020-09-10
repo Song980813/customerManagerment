@@ -125,6 +125,9 @@ public class TbAftersale implements Serializable {
      * 相关附件
      */
     private String relattachm;
-
+    /**
+     * 服务状态
+     */
+    private String statistics;
 
 }

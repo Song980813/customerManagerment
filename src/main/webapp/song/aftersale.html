@@ -6,6 +6,7 @@
 </head>
 <link rel="stylesheet" href="/layui/css/layui.css" CHARSET="UTF-8" media="all">
 <script src="/layui/layui.js" charset="UTF-8"></script>
+<script src="/js/jquery.min.js"></script>
 <style type="text/css">
     #d1{
         float: left;
@@ -16,7 +17,7 @@
         float: left;
         width: 980px;
     }
-    a:link {color:black;}    /* 未被访问的链接 */
+    a:link {color:blue;}    /* 未被访问的链接 */
     a:visited {background:#FFFF85;color:deepskyblue;} /* 已被访问的链接 */
     a:hover {background-color: white;text-transform:uppercase;}   /* 鼠标指针移动到链接上 */
     a:active {background-color: #FD482C}  /* 正在被点击的链接 */
@@ -26,40 +27,40 @@
 <div id="d1" class="layui-inline" style="width: 300px;margin-top:20px">
     <div style="width: 300px;height: 40px;background-color: #f0f0f0;border-radius:5px 5px 0 0;font-size:20px ">分类</div>
     <div style="width: 300px;height: 400px;margin-left: 20px;border-radius:0 0 5px 5px">
-        <a href="" >所有分类</a><br><br>
-        <a href="#" >处理中的服务</a><br><br>
-        <a href="#" >已结束的服务</a><br><br>
-        <a href="#" >已撤出的的服务</a><br><br>
+        <span>所有分类</span><br><br>
+        <a id="stat1" style="color: #01AAED" >处理中的服务</a><input type="text" id="s1" style="border-radius: 10px 10px;width: 20px;background-color: #28a4c9;color: white" value="12"><br><br>
+        <a id="stat2" style="color: #01AAED">已结束的服务</a><input type="text" id="s2" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
+        <a id="stat3" style="color: #01AAED">已撤出的的服务<input type="text" id="s3" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"></a><br><br>
         <hr style="margin-left: -20px;width: 300px">
-        <a href="#" >本周新增</a><br><br>
-        <a href="#" >上周新增</a><br><br>
-        <a href="#" >本月新增</a><br><br>
-        <a href="#" >上月新增</a><br><br>
-        <a href="#" >本季度新增</a><br><br>
-        <a href="#" >上季度新增</a><br><br>
+        <a id="date1" style="color: #01AAED" >本周新增</a><input type="text" id="q1" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
+        <a id="date2" style="color: #01AAED" >上周新增</a><input type="text" id="q2" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
+        <a id="mon1" style="color: #01AAED" >本月新增</a><input type="text" id="q3" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
+        <a id="mon2" style="color: #01AAED" >上月新增</a><input type="text" id="q4" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
+        <a id="quarter1" style="color: #01AAED" >本季度新增</a><input type="text" id="q5" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
+        <a id="quarter2" style="color: #01AAED" >上季度新增</a><input type="text" id="q6" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
     </div>
 </div>
-<div id="d2" style="margin-left: 200px;margin-top: 30px">
+<div id="d2" style="margin-left: 180px;margin-top: 30px">
     <form class="layui-form" id="seach">
         <div class="layui-input-inline">
             <select name="no">
                 <option value="">请选择</option>
-                <option value="1" selected="">按主题</option>
-                <option value="2">按服务类型</option>
-                <option value="3">按开始时间</option>
-                <option value="4">按服务人员</option>
-                <option value="5">按服务评分</option>
+                <option value="theme" selected="">按主题</option>
+                <option value="servicetype">按服务类型</option>
+                <option value="startime">按开始时间</option>
+                <option value="serperson">按服务人员</option>
+                <option value="serrating">按服务评分</option>
             </select>
         </div>
         <div class="layui-input-block layui-inline" style="margin-left: 8px">
             <input type="text" name="name" lay-verify="title" autocomplete="off" style="border-radius:5px 5px;width: 270px" placeholder="请输入关键词" class="layui-input">
         </div>
         <div class="layui-input-block layui-inline" style="margin-left: 8px">
-            <button type="submit" class="layui-btn layui-btn-primary layui-btn-radius"  lay-filter="demo1"><i class="layui-icon-search"></i>查找</button>
+            <button type="submit" lay-submit class="layui-btn  layui-btn-primary layui-btn-radius"  lay-filter="go"><i class="layui-icon-search"></i>查找</button>
         </div>
         <div class="layui-input-block layui-inline" style="float: right">
-            <button  type="submit" class="layui-btn layui-btn-primary layui-btn-sm">新增售后服务</button>
-            <button  type="button" class="layui-btn layui-btn-primary layui-btn-sm">刷新</button>
+            <button  type="submit" lay-submit class="layui-btn  layui-btn-primary layui-btn-sm" id="addafter">新增售后服务</button>
+            <button  type="button" lay-submit class="layui-btn  layui-btn-primary layui-btn-sm" id="reload">刷新</button>
         </div>
     </form>
 
@@ -67,38 +68,148 @@
 </div>
 
 <script src="/layui/layui.js"></script>
-<script type="text/html" id="">
-</script>
 <script>
-    layui.use(['table','form'], function(){
+    layui.use(['table','form','jquery'], function(){
         var table = layui.table;
         var form  = layui.form;
+        var $ = layui.jquery;
         //第一个实例
         table.render({
             elem: '#demo'
             ,height: 730
             ,url: '/management/tb-aftersale/selectall.do' //数据接口
             ,page: true //开启分页
+            ,limit: 30
             ,cols: [[ //表头
-                 {field: 'id', title: 'id', width:210,hide:true}
-                ,{field: 'theme', title: '主题', width:270,templet: '<div><a class="iconfont icon-chakanbaogao" style="margin-left: 3%; color: #2196F3;border-radius: 5px; cursor: pointer;text-decoration: underline;" onclick="skip({{d.id}})">{{ d.theme }}</a></div>'}
+                 {field: 'id', title: 'id',hide:true}
+                ,{field: 'theme', title: '主题', width:330,templet: '<div><a class="iconfont icon-chakanbaogao" style="text-decoration:none;margin-left: 3%; color: #2196F3;border-radius: 5px; cursor: pointer;text-decoration: none;" onclick="skip({{d.id}})">{{ d.theme }}</a></div>'}
                 ,{field: 'servicetype', title: '服务类型', width:250,}
                 ,{field: 'startime', title: '开始时间', width:250}
                 ,{field: 'serperson', title: '服务人员', width: 250}
                 ,{field: 'serrating', title: '服务评分', width: 250}
             ]]
         });
-        form.on('submit(seach)', function(data){
+        form.on('submit(go)', function(data){
+            alert(data.field)
             table.reload('demo', {
                 url: '/management/tb-aftersale/selectall.do'
                 ,where: data.field //设定异步数据接口的额外参数
             });
             return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         });
+        $(function(){
+            $("#addafter").click(function () {
+                window.location="/song/aftersaleadd.html";
+            });
+            $("#reload").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selectall.do'
+                });
+            });
+            //查询处理中
+            $("#stat1").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selectall.do'
+                    ,where:{
+                        s:'处理中'
+                    }
+                });
+            });
+            //查询已完成
+            $("#stat2").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selectall.do'
+                    ,where:{
+                        s:'已完成'
+                    }
+                });
+            });
+            //查询已撤销
+            $("#stat3").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selectall.do'
+                    ,where:{
+                        s:'已撤出'
+                    }
+                });
+            });
+
+            //查询某时间端新增
+            $("#date1").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selecttime.do'
+                    ,where:{
+                        date:'week1'
+                    }
+                });
+            });
+            $("#date2").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selecttime.do'
+                    ,where:{
+                        date:'week2'
+                    }
+                });
+            });
+            $("#mon").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selecttime.do'
+                    ,where:{
+                        date:'mon1'
+                    }
+                });
+            });
+            $("#mon").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selecttime.do'
+                    ,where:{
+                        date:'mon2'
+                    }
+                });
+            });
+            $("#quarter1").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selecttime.do'
+                    ,where:{
+                        date:'quarter1'
+                    }
+                });
+            });
+            $("#quarter2").click(function () {
+                table.reload('demo', {
+                    url: '/management/tb-aftersale/selecttime.do'
+                    ,where:{
+                        date:'quarter2'
+                    }
+                });
+            });
+        });
+
     });
-    function skip(a){
+    var skip = function(a){//查看详情
         window.location="/management/tb-aftersale/selectone.do?id="+a;
     }
+
+        $(document).ready(function() {
+            $.ajax({
+                type: 'POST',
+                datatype: 'json',
+                url: '/management/tb-aftersale/selectcount.do',
+                success: function (data) {
+                    var typecount=data.data;
+                    $("#a1").val = typecount.stat1;
+                    $("#a2").val = typecount.stat2;
+                    $("#a3").val = typecount.stat3;
+                    $("#q1").val = typecount.q1;
+                    $("#q2").val = typecount.q2;
+                    $("#q3").val = typecount.q3;
+                    $("#q4").val = typecount.q4;
+                    $("#q5").val = typecount.q5;
+                    $("#q6").val = typecount.q6;
+                }
+            });
+        });
+
 </script>
 </body>
 </html>

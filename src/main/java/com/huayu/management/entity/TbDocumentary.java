@@ -51,5 +51,10 @@ public class TbDocumentary implements Serializable {
      */
     private String enclosure;
 
+    /**
+     * kehuid
+     */
+    private Integer cid;
+
 
 }

@@ -2,6 +2,7 @@ package com.huayu.management.mapper;
 
 import com.huayu.management.entity.TbDepartment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>
