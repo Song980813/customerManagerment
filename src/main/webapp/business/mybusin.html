@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="/layui/css/layui.css" charset="UTF-8" media="all">
+    <link rel="stylesheet" type="text/css" href="/css1/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css1/demo.css" />
+
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="/css1/component.css" />
+    <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+    <script src="/js1/modernizr.custom.25376.js"></script>
+</head>
+<style type="text/css">
+
+    #u777_text {
+        border-width: 0px;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        width: 238px;
+        word-wrap: break-word;
+    }
+
+    #u211 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 91px;
+        width: 260px;
+        height: 184px;
+    }
+    #u212 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 91px;
+        width: 260px;
+        height: 40px;
+        font-family: '微软雅黑 Bold', '微软雅黑';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    #u2023 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 123px;
+        width: 260px;
+        height: 184px;
+    }
+    #u2023 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 91px;
+        width: 260px;
+        height: 40px;
+        font-family: '微软雅黑 Bold', '微软雅黑';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        text-align: left;
+    }
+
+
+
+
+    #u213 {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 0px;
+        height: 0px;
+    }
+    #u210_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 250px;
+        height: 500px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 1);
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(223, 223, 223, 1);
+        border-radius: 4px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    #u212_div {
+        /* border-width: 0px; */
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 250px;
+        height: 40px;
+        background: inherit;
+        background-color: rgba(245, 245, 245, 1);
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(223, 223, 223, 1);
+        border-radius: 4px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        font-family: '微软雅黑 Bold', '微软雅黑';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        text-align: left;
+    }
+    #u215_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 57px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    #u215 {
+        position: absolute;
+        left: 81px;
+        top: 146px;
+        width: 57px;
+        height: 16px;
+        border-width: 0px;
+    }
+    #u215_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 2px;
+        width: 57px;
+        white-space: nowrap;
+    }
+    #u214_img {
+        border-width: 0px;
+        position: absolute;
+        left: 45px;
+        top: 145px;
+        width: 24px;
+        height: 21px;
+    }
+    #u218 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 175px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u218_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u218_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 6px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u219 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u219_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u219_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: -3px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u219 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+
+    #u23 {
+        border-width: 0px;
+        position: absolute;
+        left: 1px;
+        top: 259px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u210_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u210_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 251px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+
+
+
+    #u2020 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u2020_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u2020_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 65px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2020 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+
+
+    #u2021 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u2021_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u2021_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 95px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2021 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+
+
+    #u2022 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u2022_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 71px;
+        height: 16px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #1E9FFF;
+    }
+    #u2022_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 126px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2022 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+    #u1077 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 358px;
+        width: 200px;
+        height: 1px;
+    }
+    #u1078 {
+        border-width: 0px;
+        position: absolute;
+        left: 30px;
+        top: 572px;
+        width: 200px;
+        height: 1px;
+    }
+    #u2024_text {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 166px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2024 {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 220px;
+        width: 71px;
+        height: 16px;
+        color: #1E9FFF;
+    }
+
+
+    #u2025_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 420px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+
+    #u2026_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 455px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2027_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 489.5px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2028_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 523.7px;
+        width: 71px;
+        white-space: nowrap;
+    }
+
+    #u2029_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 557.7px;
+        width: 71px;
+        white-space: nowrap;
+    }
+    #u2030_text {
+             border-width: 0px;
+             position: absolute;
+             left: 81px;
+             top: 602.3px;
+             width: 71px;
+             white-space: nowrap;
+         }
+    #u2032_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 668.3px;
+        width: 71px;
+        white-space: nowrap;
+    }
+    #u2031_text {
+        border-width: 0px;
+        position: absolute;
+        left: 81px;
+        top: 634.3px;
+        width: 71px;
+        white-space: nowrap;
+    }
+    #u311_div {
+        border-width: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 250px;
+        height: 610px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 1);
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(223, 223, 223, 1);
+        border-radius: 4px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+</style>
+<body>
+
+<div id="perspective" class="perspective effect-airbnb">
+
+    <div class="container" style="height: 111px">
+        <div class="wrapper"><!-- wrapper needed for scroll -->
+
+                    <button id="showMenu" style="background:#1E9FFF;">显示菜单</button>
+
+         <!--       <div class="column">
+                    <nav class="codrops-demos">
+                    </nav>
+                </div>-->
+            <!-- /main -->
+
+            <div id="u210" class="ax_default _图片">
+                <img id="u210_img" class="img " style="
+    margin-left: 25px;
+" src="/img/u81.png"> <p style="margin-top: -34px;margin-left: 55px;"><font style="font-family: '微软雅黑 Bold', '微软雅黑';font-weight:400" size="5">我的商机</font></p>
+            </div>
+            <div id="u211" class="ax_default box_1">
+                <div id="u311_div" class=""></div>
+            </div>
+
+            <div id="u212" class="ax_default box_1">
+                <div id="u212_div" class=""></div>
+                <div id="u777_text" class="text ">
+                    <p><span>分类</span></p>
+                </div>
+            </div>
+            <div id="u213" class="ax_default" data-left="47" data-top="141" data-width="91" data-height="21">
+                <!-- Unnamed (Shape) -->
+                <div id="u214" class="ax_default icon">
+                    <img id="u214_img" class="img " src="/img/u214.png">
+                </div>
+
+                <!-- Unnamed (Rectangle) -->
+                <div id="u215" class="ax_default label">
+                    <div id="u215_div" class=""></div>
+                    <div id="u215_text" class="text " style="left: 0px; width: 58px; transform-origin: 29px 8px;">
+                        <p><span>所有分类</span></p>
+                    </div>
+                </div>
+                <div id="u21" class="ax_default icon">
+                    <img id="u21_img" class="img " src="/img/u214.png" style="
+    margin-top: 177px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u218" class="ax_default label">
+                    <div id="u218_div" class=""></div>
+                    <div id="u218_text" class="text ">
+                        <a href="addcustomer.html"><p id="cache30" style=""><span id="cache31" style="color: #1E9FFF">我负责的商机</span></p></a>
+                    </div>
+                </div>
+
+                <div id="u22" class="ax_default icon">
+                    <img id="" class="img " src="/img/u214.png" style="
+    margin-top: 14px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u219" class="ax_default label">
+                    <div id="u219_div" class=""></div>
+                    <div id="u219_text" class="text ">
+                        <a href="addcustomer.html"><p id="cache32" style=""><span id="cache33" style="color: #1E9FFF">我参与的商机</span></p></a>
+                    </div>
+                </div>
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 48.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u2020" class="ax_default label">
+                    <div id="u2020_div" class=""></div>
+                    <div id="u2020_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">7天未跟单</span></p></a>
+                    </div>
+                </div>
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 10.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u2021" class="ax_default label">
+                    <div id="u2021_div" class=""></div>
+                    <div id="u2021_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">30天未跟单</span></p></a>
+                    </div>
+                </div>
+
+
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 10.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u2022" class="ax_default label">
+                    <div id="u2022_div" class=""></div>
+                    <div id="u2022_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">90天未跟单</span></p></a>
+                    </div>
+                </div>
+
+                <div id="u1077" class="ax_default line">
+                    <img id="u1077_img" class="img " src="/img/u1077.png" style="width: 250px;margin-top: 15.5px">
+                </div>
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 16.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u2024" class="ax_default label">
+                    <div id="u2024_div" class=""></div>
+                    <div id="u2024_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">本周新增</span></p></a>
+                    </div>
+                </div>
+
+                <div  class="ax_default icon">
+                <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+            </div>
+                <div id="u202" class="ax_default label">
+                    <div id="u2025_div" class=""></div>
+                    <div id="u2025_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">上周新增</span></p></a>
+                    </div>
+                </div>
+
+
+                <div  class="ax_default icon">
+                <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+            </div>
+                <div id="u206" class="ax_default label">
+                    <div id="u2026_div" class=""></div>
+                    <div id="u2026_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">本月新增</span></p></a>
+                    </div>
+                </div>
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div id="u207" class="ax_default label">
+                    <div id="u2027_div" class=""></div>
+                    <div id="u2027_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">上月新增</span></p></a>
+                    </div>
+                </div>
+
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div  class="ax_default label">
+                    <div id="u2028_div" class=""></div>
+                    <div id="u2028_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">本季度新增</span></p></a>
+                    </div>
+                </div>
+
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div  class="ax_default label">
+                    <div id="u2029_div" class=""></div>
+                    <div id="u2029_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">上季度新增</span></p></a>
+                    </div>
+                </div>
+
+
+                <div  class="ax_default icon">
+                <img  class="img " src="/img/u214.png" style="
+    margin-top: 22.5px;
+    margin-left: 43px;
+">
+            </div>
+                <div  class="ax_default label">
+                    <div id="u2030_div" class=""></div>
+                    <div id="u2030_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">已成交的商机</span></p></a>
+                    </div>
+                </div>
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div  class="ax_default label">
+                    <div id="u2031_div" class=""></div>
+                    <div id="u2031_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">已丢单的商机</span></p></a>
+                    </div>
+                </div>
+
+                <div  class="ax_default icon">
+                    <img  class="img " src="/img/u214.png" style="
+    margin-top: 13.5px;
+    margin-left: 43px;
+">
+                </div>
+                <div  class="ax_default label">
+                    <div id="u2032_div" class=""></div>
+                    <div id="u2032_text" class="text ">
+                        <a href="addcustomer.html"><p  style=""><span  style="color: #1E9FFF">已搁置的商机</span></p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div id="u23" class="ax_default icon">
+                <img id="u23_img" class="img " src="/img/u214.png" style="
+    margin-top: -20px;
+    margin-left: 43px;
+">
+            </div>
+            <div id="u220" class="ax_default label">
+                <div id="u210_div" class=""></div>
+                <div id="u210_text" class="text ">
+                    <a href="addcustomer.html"><p id="cache34" style=""><span id="cache35" style="color: #1E9FFF">我关注的商机</span></p></a>
+                </div>
+            </div>
+            <div id="u1078" class="ax_default line">
+                <img id="u1078_img" class="img " src="/img/u1077.png" style="width: 250px;margin-top: 15.5px">
+            </div>
+
+
+
+
+
+
+
+
+            <div class="layui-inline">
+
+            <form class="layui-form"  style="margin-left: 211px;; margin-top: -39px;" id="seach">
+
+                <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="margin-left: 70px" >商机名</label>
+                        <input type="text" name="boName" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:222px">
+                </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">阶段</label>
+                            <input type="text" name="state" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:222px">
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">负责人</label>
+                        <input type="text" name="yhxm" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:222px">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="margin-left: 70px" >属部门</label>
+                        <input type="text" name="department" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:222px">
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label"  >成交额</label>
+                        <input type="text" name="amount" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:222px">
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label" >时间</label>
+                        <input type="text" name="closingdate" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:222px">
+                    </div>
+                </div>
+
+                <div class=" layui-inline">
+                    <button class="layui-btn layui-btn-primary layui-inline " lay-submit lay-filter="go" style="margin-left: 388px;width: 80px;height: 35.5px;top: -22px;  background-color: #1E9FFF;">查询 </button>
+                    <button class="layui-btn layui-btn-primary layui-inline " lay-submit lay-filter="go" style="margin-left: 45px;width: 80px;height: 35.5px;top: -22px;  background-color: #fffcfc;">重置 </button>
+                </div>
+                <div class="layui-input-block layui-inline" style="float: right;margin-left: 22px;top: -22px;">
+                    <button type="button" class="layui-btn layui-btn-primary layui-btn-sm layui-inline" style="width: 79px;height: 34px; background-color: #fffcfc;"><a href="/business/addbusin.html"><font style="color: #666666;">新增客户</font></a></button>
+                    <button type="button" class="layui-btn layui-btn-primary layui-btn-sm layui-inline" style="width: 79px;height: 34px; background-color: #fffcfc;"> 刷新</button>
+                </div>
+
+            </form>
+
+            </div>
+
+<div style="float: right;margin-top:23px;margin-right: 375px">
+            <table id="demo" lay-filter="test" style="margin-top: -60px;margin-left: 288px;"></table>
+</div>
+            <script src="/layui/layui.js" charset="UTF-8"></script>
+            <script>
+                layui.use(['table', 'form','layer','jquery','tree'], function() {
+                    var table = layui.table
+                    var form = layui.form;
+                    var  layer=layui.layer;
+                    var $=layui.jquery;
+                    var  tree=layui.tree;
+
+                    table.render({
+                        elem: '#demo'
+                        , height: 555
+                        , url: '/management/tb-business/selebuin.do' //数据接口
+                        , limit:1
+                        ,  page: true //开启分页
+                        , cols: [[ //表头
+                        /*    {field: '', title: '编号', width: 80, style: "height:77px",type:"checkbox", sort: true, fixed: 'left'},*/
+                            {field: 'sid', title: 'ID', width: 80, style: "height:77px", sort: true,hide:true}
+                            , {field: 'sjname', title:'商机名称', width: 212,style: 'color: #000',templet:'<div><a class="iconfont icon-chakanbaogao" style="margin-left: 3%; color: #2196F3;border-radius: 5px; cursor: pointer;text-decoration: none;" onclick="skip({{d.sid}})">{{ d.sjname }}</a></div>'}
+                            , {field: 'sjjd', title: '商机阶段', width: 122, sort: true}
+                            , {field: 'yjcjnum', title: '预计成交金额', width: 133}
+                            , {field: 'sjfz', title: '商机负责人', width: 99}
+                            , {field: 'zhhd', title: '最后跟单', width: 133, sort: true}
+                            , {field: 'tlb', title: '讨论版', width: 136, sort: true}
+                        ]]
+                    });
+                    form.on('submit(go)', function(data){
+                        table.reload('demo', {
+                            url: '/management/tb-business/selebuin.do'
+                            ,where: data.field,
+
+                        });
+                        return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+                    });
+
+                });
+                function skip(a){
+                alert("2121")
+                }
+
+            </script>
+
+        </div><!-- wrapper -->
+    </div><!-- /container -->
+
+    <nav class="outer-nav left vertical">
+        <a href="/loghtml/zym.html" class="icon-home">我的桌面</a>
+        <a href="/loghtml/customer.html" class="icon-news">客户管理</a>
+        <a href="#" class="icon-image">我的商机</a>
+        <a href="#" class="icon-upload">全部商机</a>
+        <a href="#" class="icon-star">我的跟单</a>
+        <a href="#" class="icon-mail">全部跟单</a>
+        <a href="#" class="icon-lock">全部讨论帖子</a>
+        <a href="#" class="icon-mail">我的合同</a>
+        <a href="#" class="icon-mail">全部合同</a>
+        <a href="#" class="icon-lock">售后服务</a>
+        <a href="#" class="icon-lock">统计分析</a>
+        <a href="#" class="icon-lock">安全退出</a>
+    </nav>
+
+</div><!-- /perspective -->
+
+<script src="/js1/classie.js"></script>
+<script src="/js1/menu.js"></script>
+
+</body>
+</html>

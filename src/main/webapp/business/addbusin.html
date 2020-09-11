@@ -27,7 +27,14 @@
     #u488_text {
         border-width: 0px;
         position: absolute;
-        top: 255px;
+        top: 252px;
+        /* width: 1008px; */
+        word-wrap: break-word;
+    }
+    #u489_text {
+        border-width: 0px;
+        position: absolute;
+        top: 930px;
         /* width: 1008px; */
         word-wrap: break-word;
     }
@@ -65,6 +72,7 @@
     }
 
 
+
 </style>
 <body>
 <center>
@@ -76,10 +84,8 @@
                         <p>
                           <span style="margin-left: 215px;">新增商机
 
-
-
 <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left: 760px;width: 67px;">
-<a href="custmergl.html"><font style="color: #666666">返回</font></a>
+<a href="/business/mybusin.html"><font style="color: #666666">返回</font></a>
   </button>
 <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
    刷新
@@ -99,12 +105,12 @@
 
 
         <br/>
-            <form class="layui-form" action="/management/tb-customer/addcrm.do" method="get">
+            <form class="layui-form" action="/management/tb-business/addbusin.do" method="get">
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>客户名称</span></p></label>
+                <label class="layui-form-label"><p><span style="color:#FF0000">*</span><span>客户名称</span></p></label>
                 <div class="layui-input-block">
-                    <input type="text" name="customerName" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                    <input type="text" name="cname" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
                 </div>
             </div>
             <div class="layui-inline">
@@ -147,14 +153,161 @@
                         </div>
                     </div>
                 </div>
-                    <br><br>
 
                     <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
                         <div id="u488_text" class="text ">
                             <p><span>商机信息</span></p>
                         </div>
                     </div>
+            <br>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>商机名称</span></p></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="boName" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">客户来源</label>
+                        <div class="layui-input-inline" style="width:390px">
+                            <select name="coustomerResource">
+                                <option value="">请选择</option>
+                                <option value="老客户">代理商</option>
+                                <option value="互联网">互联网</option>
+                                <option value="独立开发">独立开发</option>
+                                <option value="客户介绍">客户介绍</option>
+                                <option value="合作伙伴">合作伙伴</option>
+                                <option value="促销开发">促销开发</option>
+                                <option value="媒体宣传">媒体宣传</option>
+                                <option value="客户来电">电话访问</option>
+                                <option value="二次销售">二次销售</option>
+                                <option value="公开招标">公开招标</option>
+                                <option value="研讨会和展会">研讨会和展会</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
+
+                <div class="layui-form-item">
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">预计成交额</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="amount" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">预计结单日</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="closingdate" class="layui-input" id="test1" placeholder="yyyy-MM-dd"style="width:390px">
+                    </div>
+                </div>
+            </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>联系人</span></p></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="coustomer" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">详细地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="address" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="job" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">固定电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="telephone" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">移动电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="mobilePhone" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">邮件/QQ</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="emailQq" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">主业务需求</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="requirements3" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:910px;height:150px">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+          选择相关附件<input type="file" name="enclosure" >
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>商机所属部</span></p></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="department" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label"><p><span style="color:#FF0000;">*</span><span>商机负责人</span></p></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="chargePerson" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">商机参与人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="participants" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                            <img id="u1539_img" class="img " style="margin-left: 360px;margin-top: -54px" src="/img/u1539.png">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">商机关注人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="focusPeople" value="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:390px">
+                            <img  class="img " style="margin-left: 360px;margin-top: -54px" src="/img/u1539.png">
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color:rgba(255, 255, 224, 1);width: 1000px;border-width: 1px;height: 40px;border-style: solid;border-width: 1px;border-color: rgba(221, 221, 221, 1);">
+                    <div id="u489_text" class="text ">
+                        <p><span>处理流程日志</span></p>
+                    </div>
+                </div>
+                <button type="submit" class="layui-btn layui-btn-radius layui-btn-normal" style="width: 90px">确定</button>
+                <a href="http://www.layui.com" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 90px">取消</a>
             </form>
     </div>
     </div>
@@ -172,6 +325,8 @@
         laydate.render({
             elem: '#test1'
         });
+
+
     });
     layui.use('laydate', function(){
         var laydate = layui.laydate;

@@ -1,8 +1,9 @@
 package com.huayu.management.entity;
 
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -65,5 +66,7 @@ public class TbPost implements Serializable {
      */
     private String startime;
 
+
+    private  int sid;//商机id
 
 }

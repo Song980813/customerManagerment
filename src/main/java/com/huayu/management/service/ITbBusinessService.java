@@ -1,7 +1,8 @@
 package com.huayu.management.service;
 
-import com.huayu.management.entity.TbBusiness;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.huayu.management.bo.LayuiEntity;
+import com.huayu.management.entity.TbBusiness;
 
 /**
  * <p>
@@ -14,4 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITbBusinessService extends IService<TbBusiness> {
 
+
+    LayuiEntity selebuin(int page, int limit, TbBusiness tbBusiness,String yhxm);
 }
