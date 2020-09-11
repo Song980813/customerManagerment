@@ -52,9 +52,9 @@ public class TbDocumentary implements Serializable {
     private String enclosure;
 
     /**
-     * kehuid
+     * 商机id
      */
-    private Integer cid;
+    private Integer sid;
 
 
 }

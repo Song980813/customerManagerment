@@ -24,22 +24,24 @@
 </style>
 <body>
 <div style="width: 600px;border: 0px;font-size:28px "><img src="/img/2.3.jpg" width="32px" height="36px">售后服务</div>
+
 <div id="d1" class="layui-inline" style="width: 300px;margin-top:20px">
     <div style="width: 300px;height: 40px;background-color: #f0f0f0;border-radius:5px 5px 0 0;font-size:20px ">分类</div>
     <div style="width: 300px;height: 400px;margin-left: 20px;border-radius:0 0 5px 5px">
-        <span>所有分类</span><br><br>
-        <a id="stat1" style="color: #01AAED" >处理中的服务</a><input type="text" id="s1" style="border-radius: 10px 10px;width: 20px;background-color: #28a4c9;color: white" value="12"><br><br>
-        <a id="stat2" style="color: #01AAED">已结束的服务</a><input type="text" id="s2" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-        <a id="stat3" style="color: #01AAED">已撤出的的服务<input type="text" id="s3" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"></a><br><br>
+        <div>所有分类</div><br>
+        <div><a id="stat1" style="color: #01AAED" >处理中的服务</a><span type="text" id="s1" style="border-radius: 10px 10px;width: 20px;background-color: #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        <div><a id="stat2" style="color: #01AAED">已结束的服务</a><span type="text" id="s2" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px" >0</span></div><br>
+        <div><a id="stat3" style="color: #01AAED">已撤出的的服务</a><span type="text" id="s3" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
         <hr style="margin-left: -20px;width: 300px">
-        <a id="date1" style="color: #01AAED" >本周新增</a><input type="text" id="q1" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-        <a id="date2" style="color: #01AAED" >上周新增</a><input type="text" id="q2" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-        <a id="mon1" style="color: #01AAED" >本月新增</a><input type="text" id="q3" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-        <a id="mon2" style="color: #01AAED" >上月新增</a><input type="text" id="q4" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-        <a id="quarter1" style="color: #01AAED" >本季度新增</a><input type="text" id="q5" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-        <a id="quarter2" style="color: #01AAED" >上季度新增</a><input type="text" id="q6" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white"><br><br>
-    </div>
-</div>
+        <div><a id="date1" style="color: #01AAED" >本周新增</a><span type="text" id="q1" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        <div><a id="date2" style="color: #01AAED" >上周新增</a><span type="text" id="q2" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        <div><a id="mon1" style="color: #01AAED" >本月新增</a><span type="text" id="q3" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        <div><a id="mon2" style="color: #01AAED" >上月新增</a><span type="text" id="q4" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        <div><a id="quarter1" style="color: #01AAED" >本季度新增</a><span type="text" id="q5" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        <div><a id="quarter2" style="color: #01AAED" >上季度新增</a><span type="text" id="q6" style="border-radius: 10px 10px;width: 20px;background-color:  #28a4c9;color: white;float: right;text-align: center;margin-right: 30px">0</span></div><br>
+        </div>
+ </div>
+
 <div id="d2" style="margin-left: 180px;margin-top: 30px">
     <form class="layui-form" id="seach">
         <div class="layui-input-inline">
@@ -197,15 +199,15 @@
                 url: '/management/tb-aftersale/selectcount.do',
                 success: function (data) {
                     var typecount=data.data;
-                    $("#a1").val = typecount.stat1;
-                    $("#a2").val = typecount.stat2;
-                    $("#a3").val = typecount.stat3;
-                    $("#q1").val = typecount.q1;
-                    $("#q2").val = typecount.q2;
-                    $("#q3").val = typecount.q3;
-                    $("#q4").val = typecount.q4;
-                    $("#q5").val = typecount.q5;
-                    $("#q6").val = typecount.q6;
+                    $("#a1").text(typecount.stat1);
+                    $("#a2").text(typecount.stat2);
+                    $("#a3").text(typecount.stat3);
+                    $("#q1").text(typecount.q1);
+                    $("#q2").text(typecount.q2);
+                    $("#q3").text(typecount.q3);
+                    $("#q4").text(typecount.q4);
+                    $("#q5").text(typecount.q5);
+                    $("#q6").text(typecount.q6);
                 }
             });
         });

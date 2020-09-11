@@ -7,32 +7,7 @@
     <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" href="/layui/css/layui.css" media="all">
 </head>
-<script type="text/javascript">
-        $(function () {
-            // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document .getElementById('main'));
-        // 指定图表的配置项和数据
-        var option = {
-            series : [
-                {
-                    name: '访问来源',
-                    type: 'pie',
-                    radius: '55%',
-                    roseType: 'angle',
-                    data:[
-                        {value:235, name:'已成交'},
-                        {value:274, name:'已丢单'},
-                        {value:310, name:'已搁置'},
-                        {value:335, name:'进行中'}
-                    ]
-                }
-            ]
-        };
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    })
-</script>
 <style type="text/css">
     div{
         border:1px solid #000;
@@ -57,13 +32,52 @@
 </div>
 <div id="d2" class="layui-inline" style="margin-top:30px;width: 600px;border: 0px">
     <div style="width: 600px;height:30px;background-color: #f0f0f0;border-radius:5px 5px 0 0;font-size:20px ">客户关系</div>
-    <div style="width: 600px;height: 40px">
-        <span style="margin-left: 10px">全部客户</span>
-        <span style="margin-left: 200px">全部商机</span>
-        <span style="margin-right: 30px;float: right">全部合同</span>
+    <div style="width: 600px;height: 40px;text-align: center">
+        <div style=" float: left;margin-left: 20px;height: 39px;border: 0px">全部客户<br><span id="sp1"></span></div>
+        <div style=" float:left;margin-left: 200px;height: 39px ;border: 0px">全部商机<br><span id="sp2"></span></div>
+        <div style="margin-right: 30px;float: right;height: 39px ;border: 0px">全部合同<br><span id="sp3"></span></div>
     </div>
     <div  id="main" style="width: 600px;height:350px;border-radius:0 0 5px 5px"></div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({//查各个数量
+            url: '/management/statistic/zongtj.do',
+            //dataType:'json',
+            type: 'post',
+            success:function(data){
+                $("#sp1").text(data.stat1)
+                $("#sp2").text(data.stat3)
+                $("#sp3").text(data.stat2)
+            }
+        });
+        $.ajax({//查各个数量
+            url: '/management/statistic/tjzongs.do',
+            dataType:'json',
+            type: 'post',
+            success:function(data){
+                var obj=[]
+                for(var i=0;i<data.length;i++){
+                    var jj={value:data[i].moneySum,name:data[i].stat}
+                    obj.push(jj)
+                }
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document .getElementById('main'));
+                // 指定图表的配置项和数据
+                option_hysj = {
+                    title: {left: 'center'},
+                    tooltip: {trigger: 'item', formatter: '{a} <br/>{b} : {c} ({d}%)'},
+                    series: [
+                        {type: 'pie', radius: '55%', center: ['40%', '50%'], data: obj,
+                            emphasis: {itemStyle: {shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)'}}}]
+                };
 
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option_hysj);
+            }
+        });
+
+    })
+</script>
 </body>
 </html>

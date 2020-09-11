@@ -66,7 +66,7 @@ public class TbAftersaleController {
 
     @RequestMapping("selectone")
     public String selectOne(Integer id,Model model){
-        //model.addAttribute("after",aftersaleService.getById(id));
+        model.addAttribute("after",aftersaleService.getById(id));
         return "/song/aftersaledetails.html";
     }
     @RequestMapping("selecttime")

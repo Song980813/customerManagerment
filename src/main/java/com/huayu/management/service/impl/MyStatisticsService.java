@@ -1,14 +1,14 @@
 package com.huayu.management.service.impl;
 
-import com.huayu.management.bo.LayuiEntity;
-import com.huayu.management.bo.MyStatistics;
-import com.huayu.management.mapper.TbBusinessMapper;
-import com.huayu.management.mapper.TbContractMapper;
-import com.huayu.management.mapper.TbDocumentaryMapper;
+import com.huayu.management.bo.*;
+import com.huayu.management.entity.TbCustomer;
+import com.huayu.management.entity.TbEmployee;
+import com.huayu.management.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
 
 /**
@@ -23,10 +23,20 @@ public class MyStatisticsService{
     @Autowired
     private TbBusinessMapper businessMapper;
     /**
+     * 用户mapper
+     */
+    @Autowired
+    private TbEmployeeMapper employeeMapper;
+    /**
      * //跟单mapper
      */
     @Autowired
     private TbDocumentaryMapper documentaryMapper;
+    /**
+     * //客户mapper
+     */
+    @Autowired
+    private TbCustomerMapper customerMapper;
 
     /**
      * //合同mapper
@@ -184,13 +194,380 @@ public class MyStatisticsService{
         list.add(cont_6);
 
         MyStatistics cont_7=new MyStatistics();
-        cont_7.setCNum(21);
+        cont_7.setCNum(31);
         cont_7.setCounts(contractMapper.statNowYear());
         list.add(cont_7);
         MyStatistics cont_8=new MyStatistics();
         cont_8.setCNum(32);
         cont_8.setCounts(contractMapper.statLastYear());
         list.add(cont_8);
+        return list;
+    }
+
+    /**
+     * 本周和上周的各个数量
+     * @return
+     */
+    public List<WeekCount>  selectWeek(){
+        List<TbEmployee> empList=employeeMapper.selectList(null);
+        List<WeekCount> weeklist=new ArrayList<>();
+        for(TbEmployee emp:empList){
+            WeekCount w=new WeekCount();
+            w.setName(emp.getName());
+            w.setSjweek1(businessMapper.statNowWeek2(emp.getId()));
+            w.setSjweek2(businessMapper.statLastWeek2(emp.getId()));
+            w.setCjweek1(businessMapper.statNowWeek3(emp.getId()));
+            w.setCjweek2(businessMapper.statLastWeek3(emp.getId()));
+            w.setGdweek1(documentaryMapper.statNowWeek1(emp.getId()));
+            w.setGdweek2(documentaryMapper.statLastWeek1(emp.getId()));
+            w.setHtweek1(contractMapper.statNowWeek1(emp.getId()));
+            w.setHtweek2(contractMapper.statLastWeek1(emp.getId()));
+            weeklist.add(w);
+        }
+
+        return weeklist;
+    }
+    /**
+     * 本月和上月的各个数量
+     * @return
+     */
+    public List<MonCount> selectMon(){
+        List<TbEmployee> empList=employeeMapper.selectList(null);
+        List<MonCount> monlist=new ArrayList<>();
+        for(TbEmployee emp:empList){
+            MonCount w=new MonCount();
+            w.setName(emp.getName());
+            w.setSjmon1(businessMapper.statNowMon2(emp.getId()));
+            w.setSjmon2(businessMapper.statLastMon2(emp.getId()));
+            w.setCjmon1(businessMapper.statNowMon3(emp.getId()));
+            w.setCjmon2(businessMapper.statLastMon3(emp.getId()));
+            w.setGdmon1(documentaryMapper.statNowMon1(emp.getId()));
+            w.setGdmon2(documentaryMapper.statLastMon1(emp.getId()));
+            w.setHtmon1(contractMapper.statNowMon1(emp.getId()));
+            w.setHtmon2(contractMapper.statLastMon1(emp.getId()));
+            monlist.add(w);
+        }
+        return monlist;
+    }
+    /**
+     * 本季度和上季度的各个数量
+     * @return
+     */
+    public List<JiduCount> selectJidu(){
+        List<TbEmployee> empList=employeeMapper.selectList(null);
+        List<JiduCount> jidulist=new ArrayList<>();
+        for(TbEmployee emp:empList){
+            JiduCount w=new JiduCount();
+            w.setName(emp.getName());
+            w.setSjjidu1(businessMapper.statNowQuarter2(emp.getId()));
+            w.setSjjidu2(businessMapper.statLastQuarter2(emp.getId()));
+            w.setCjjidu1(businessMapper.statNowQuarter3(emp.getId()));
+            w.setCjjidu2(businessMapper.statLastQuarter3(emp.getId()));
+            w.setGdjidu1(documentaryMapper.statNowQuarter1(emp.getId()));
+            w.setGdjidu2(documentaryMapper.statLastQuarter1(emp.getId()));
+            w.setHtjidu1(contractMapper.statNowQuarter1(emp.getId()));
+            w.setHtjidu2(contractMapper.statLastQuarter1(emp.getId()));
+            jidulist.add(w);
+        }
+        return jidulist;
+    }
+    /**
+     * 本年和上年的各个数量
+     * @return
+     */
+    public List<YearCount>  selectYear(){
+        List<TbEmployee> empList=employeeMapper.selectList(null);
+        List<YearCount> yearlist=new ArrayList<>();
+        for(TbEmployee emp:empList){
+            YearCount w=new YearCount();
+            w.setName(emp.getName());
+            w.setSjyear1(businessMapper.statNowYear2(emp.getId()));
+            w.setSjyear2(businessMapper.statLastYear2(emp.getId()));
+            w.setCjyear1(businessMapper.statNowYear3(emp.getId()));
+            w.setCjyear2(businessMapper.statLastYear3(emp.getId()));
+            w.setGdyear1(documentaryMapper.statNowYear1(emp.getId()));
+            w.setGdyear2(documentaryMapper.statLastYear1(emp.getId()));
+            w.setHtyear1(contractMapper.statNowYear1(emp.getId()));
+            w.setHtyear2(contractMapper.statLastYear1(emp.getId()));
+            yearlist.add(w);
+        }
+
+        return yearlist;
+    }
+
+    /**
+     * 根据行业查数量和金额
+     */
+    public List<SjSum> selectHy(){
+
+        String[] str = new String[]{
+                "IT|互联网|通信|电子",
+                "房产|建筑建设|物业",
+                "管理咨询|教育科研|中介服务",
+                "加工制造|仪表设备",
+                "金融|银行|保险",
+                "酒店旅游",
+                "能源矿产|石油化工",
+                "消费零售|贸易|交通物流",
+                "医药生物|医疗保健",
+                "政府|非赢利机构|科研",
+                "其他"};
+        List<SjSum> slist=businessMapper.selectSum();
+        List list1 = new ArrayList<>();
+        if(slist.size()>0){
+            for(SjSum b:slist){
+                list1.add(b.getStat());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[i])){
+                    slist.add(new SjSum(str[i],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                    slist.add(new SjSum(str[i],0,0));
+            }
+        }
+
+        return slist;
+    }
+
+    /**
+     * 根据商机来源查数量和金额
+     */
+    public List<sjResource> selectRe(){
+
+        String[] str = new String[]{
+                "电话访问",
+                "独立开发",
+                "二次销售",
+                "合作伙伴",
+                "互联网",
+                "客户介绍",
+                "客户来电",
+                "老客户",
+                "媒体宣传"};
+        List<sjResource> list = businessMapper.sjSum();
+        List list1 = new ArrayList<>();
+        if(list.size()>0){
+            for(sjResource b:list){
+                list1.add(b.getResource());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[0])){
+                    list.add(new sjResource(str[0],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                    list.add(new sjResource(str[i],0,0));
+            }
+        }
+
+        return list;
+    }
+
+
+
+    /**
+     * 查询所有商机数量 ，客户数量，合同数量
+     */
+    public Counts zTongji(){
+        /*
+        * a:客户b:合同：c:商机
+        * */
+        Integer c=businessMapper.sjzongS();
+        Integer b=contractMapper.contracts();
+        Integer a=customerMapper.customer();
+        Counts coun=new Counts();
+        coun.setStat1(a);
+        coun.setStat2(b);
+        coun.setStat3(c);
+
+        return coun;
+    }
+
+
+    /**
+     * 查商机数量和金额
+     */
+    public List<SjSum> sjZTong(){
+
+        List<SjSum> list = businessMapper.sjtongji();
+        List<SjSum> list2 = new ArrayList<>();
+        Integer i=0;
+        if(list.size()>0){
+            for (SjSum s:list){
+                if(s.getStat().equals("进行中")){
+                    list2.add(new SjSum(s.getStat(),s.getSjCount(),s.getMoneySum()));
+                }
+                if(s.getStat().equals("已丢单")){
+                    list2.add(new SjSum(s.getStat(),s.getSjCount(),s.getMoneySum()));
+                }
+                if(s.getStat().equals("已搁置")){
+                    list2.add(new SjSum(s.getStat(),s.getSjCount(),s.getMoneySum()));
+                }
+                if(!s.getStat().equals("进行中")&&!s.getStat().equals("进行中")&&!s.getStat().equals("进行中")){
+
+                    list2.add(new SjSum(s.getStat(),s.getSjCount(),i+s.getMoneySum()));
+                }
+            }
+        }else{
+            list2.add(new SjSum("进行中",0,0));
+            list2.add(new SjSum("已成交",0,0));
+            list2.add(new SjSum("已搁置",0,0));
+            list2.add(new SjSum("已丢单",0,0));
+        }
+
+        return list2;
+    }
+
+    /**
+     * 根据上年度查数量和金额
+     */
+    public List<SjSum> selectAllCount(){
+
+        String[] str = new String[]{
+                "初期沟通",
+                "方案和报价",
+                "竞争和投标",
+                "商务谈判",
+                "成交"};
+        List<SjSum> list = businessMapper.sjtongji();
+        List<String> list1 = new ArrayList<>();
+        if(list.size()>0){
+            for(SjSum b:list){
+                list1.add(b.getStat());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[0])){
+                    list.add(new SjSum(str[0],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                list.add(new SjSum(str[i],0,0));
+            }
+        }
+
+        return list;
+    }
+
+    /**
+     * 根据本年度查数量和金额
+     */
+    public List<SjSum> selectAllCount1(){
+        String[] str = new String[]{
+                "初期沟通",
+                "方案和报价",
+                "竞争和投标",
+                "商务谈判",
+                "成交"};
+        List<SjSum> list = businessMapper.sjtong3();
+        List<String> list1 = new ArrayList<>();
+        if(list.size()>0){
+            for(SjSum b:list){
+                list1.add(b.getStat());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[0])){
+                    list.add(new SjSum(str[0],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                list.add(new SjSum(str[i],0,0));
+            }
+        }
+
+        return list;
+    }
+    /**
+     * 根据上年度查数量和金额
+     */
+    public List<SjSum> selectAllCount2(){
+        String[] str = new String[]{
+                "初期沟通",
+                "方案和报价",
+                "竞争和投标",
+                "商务谈判",
+                "成交"};
+        List<SjSum> list = businessMapper.sjtong2();
+        List<String> list1 = new ArrayList<>();
+        if(list.size()>0){
+            for(SjSum b:list){
+                list1.add(b.getStat());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[0])){
+                    list.add(new SjSum(str[0],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                list.add(new SjSum(str[i],0,0));
+            }
+        }
+
+        return list;
+    }
+
+    /**
+     * 根据本季度查数量和金额
+     */
+    public List<SjSum> selectAllCount3(){
+        String[] str = new String[]{
+                "初期沟通",
+                "方案和报价",
+                "竞争和投标",
+                "商务谈判",
+                "成交"};
+        List<SjSum> list = businessMapper.sjtong5();
+        List<String> list1 = new ArrayList<>();
+        if(list.size()>0){
+            for(SjSum b:list){
+                list1.add(b.getStat());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[0])){
+                    list.add(new SjSum(str[0],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                list.add(new SjSum(str[i],0,0));
+            }
+        }
+
+        return list;
+    }
+    /**
+     * 根据上季度查数量和金额
+     */
+    public List<SjSum> selectAllCount4(){
+        String[] str = new String[]{
+                "初期沟通",
+                "方案和报价",
+                "竞争和投标",
+                "商务谈判",
+                "成交"};
+        List<SjSum> list = businessMapper.sjtong4();
+        List<String> list1 = new ArrayList<>();
+        if(list.size()>0){
+            for(SjSum b:list){
+                list1.add(b.getStat());
+            }
+            for(int i=0;i<str.length;i++){
+                if(!list1.contains(str[0])){
+                    list.add(new SjSum(str[0],0,0));
+                }
+            }
+        }else{
+            for(int i=0;i<str.length;i++){
+                list.add(new SjSum(str[i],0,0));
+            }
+        }
+
         return list;
     }
 }
