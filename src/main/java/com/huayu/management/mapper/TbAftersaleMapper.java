@@ -1,9 +1,8 @@
 package com.huayu.management.mapper;
 
-import com.huayu.management.entity.TbAftersale;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.huayu.management.entity.TbAftersale;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
 
 /**
  * <p>

@@ -13,7 +13,7 @@
 		        CRM注册平台
 		    <div class="gy2" >打造国内最具规模的、最专业的供CRM客户管理平台 </div>
 		</div>
-            <form class="layui-form" action="/selectyh.do" enctype="multipart/form-data" method="post">
+            <form class="layui-form" action="/management/tb-employee/savelog.do" enctype="multipart/form-data" method="get">
 		<div class="bg"  style="height: 750px">
 			<div class="wel">用户注册</div>
             <div class="" >
@@ -23,7 +23,7 @@
             </div>
 	        <div class="user">
 	       	    <div id="yongu" style="">账号</div>
-	       	    <input  type="text" name="username" />
+	       	    <input  type="text" name="usernum" />
 	        </div>
 	        <div class="password" >
 	        	<div id="yonghu" >密&nbsp;&nbsp;&nbsp;码</div>
@@ -43,17 +43,17 @@
             </div>
             <div class="dhhm">
                 <div id="dhhm" style="">&nbsp;&nbsp;电话号码</div>
-                <input  type="text" name="dhhm" />
+                <input  type="text" name="phone"/>
             </div>
             <div class="layui-form-item" style="margin-top: 75px">
                 <label class="layui-form-label">角色</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="js" value="管理员" title="管理员">
-                    <input type="radio" name="js" value="用户" title="用户" checked>
+                    <input type="radio" name="postId" value="管理员" title="管理员">
+                    <input type="radio" name="postId" value="用户" title="用户" checked>
                 </div>
             </div>
 
-            <input type="hidden" name="tx" id="fieid" value="">
+            <input type="hidden" name="identificationPhoto" id="fieid" value="">
             <div class="layui-upload">
                 <button type="button"class="layui-btn" id="test1" style="background-color:#347ebc; margin-top: 9px">上传图片</button>
                 <div class="layui-upload-list">
@@ -76,7 +76,7 @@
                 //普通图片上传
                 var uploadInst = upload.render({
                     elem: '#test1'
-                    ,url: "/sdhsj.do"
+                    ,url: "/management/tb-employee/laAdd.do"
                     ,before: function(obj){
                         obj.preview(function(index, file, result){
                             $('#demo1').attr('src', result); //图片链接（base64

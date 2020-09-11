@@ -85,13 +85,7 @@ public class TbEmployee implements Serializable {
         this.postId = postId;
     }
 
-    public Integer getPhone() {
-        return phone;
-    }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
-    }
 
     public String getIdentificationPhoto() {
         return identificationPhoto;
@@ -136,7 +130,7 @@ public class TbEmployee implements Serializable {
     /**
      * 电话号码
      */
-    private Integer phone;
+    private String phone;
 
     /**
      * 头像
@@ -148,5 +142,11 @@ public class TbEmployee implements Serializable {
      */
     private String motto;
 
+    public String getPhone() {
+        return phone;
+    }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }
