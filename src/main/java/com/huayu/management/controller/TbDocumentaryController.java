@@ -48,7 +48,7 @@ public class TbDocumentaryController {
 //      return list;
 //    }
 
-    @RequestMapping("selectname")
+    @RequestMapping("/selectname")
     @ResponseBody
     public List<DocuTheme> selectname(){
         List<DocuTheme> list=iTbDocumentaryService.slecttheme();

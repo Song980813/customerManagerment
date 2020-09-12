@@ -52,25 +52,9 @@ public class TbDocumentary implements Serializable {
     private String enclosure;
 
     /**
-     * 跟单主题
-     */
-
-    private String documentarytheme;
-    /**
      * 商机id
      */
+    private Integer sid;
 
-    private String sid;
-    @Override
-    public String toString() {
-        return "TbDocumentary{" +
-                "id=" + id +
-                ", merchandisingtime='" + merchandisingtime + '\'' +
-                ", classify='" + classify + '\'' +
-                ", merchandisingpeople=" + merchandisingpeople +
-                ", details='" + details + '\'' +
-                ", enclosure='" + enclosure + '\'' +
-                ", documentarytheme='" + documentarytheme + '\'' +
-                '}';
-    }
+
 }

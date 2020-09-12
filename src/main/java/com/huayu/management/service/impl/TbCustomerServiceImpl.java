@@ -68,7 +68,7 @@ public class TbCustomerServiceImpl extends ServiceImpl<TbCustomerMapper, TbCusto
             List<TbAftersale> list5 = null;
              int fwcs=0;
             for (TbContract list : list3) {                //循环查询出来的合同
-                htje += list.getSum();
+                htje +=Integer.parseInt(list.getSum());
                 String htbh = list.getContractCode();//拿到合同的编号在去收入记录表去查询
                 QueryWrapper queryWrapper3 = new QueryWrapper();
                 queryWrapper3.eq("acsdgual", htbh);
