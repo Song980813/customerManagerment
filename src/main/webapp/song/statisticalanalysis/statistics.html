@@ -283,7 +283,7 @@
     <div>
         <div class="layui-inline" id="l1" style="width: 400px;height:350px;border-radius:0 0 5px 5px"></div>
         <div class="layui-inline" style="float: right;margin-top: -18px">
-            <table id="ztj" border="1" style="width: 580px;float: right;">
+            <table id="ztj" border="1" style="width: 580px;float: right;text-align: center">
                 <tr style="height: 45px;background-color:  #f0f0f0">
                     <td>商机数</td>
                     <td>百分比</td>
@@ -296,7 +296,7 @@
     <div>
         <div class="layui-inline" id="l2" style="width: 400px;height:350px;border-radius:0 0 5px 5px"></div>
         <div class="layui-inline" style="float: right;margin-top: -18px">
-            <table id="ztj1" border="1" style="width: 580px;float: right;">
+            <table id="ztj1" border="1" style="width: 580px;float: right;text-align: center">
                 <tr style="height: 45px;background-color: #f0f0f0">
                     <td>商机数</td>
                     <td>百分比</td>
@@ -309,7 +309,7 @@
     <div>
         <div class="layui-inline" id="l3" style="width: 400px;height:350px;border-radius:0 0 5px 5px"></div>
         <div class="layui-inline" style="float: right;margin-top: -18px">
-            <table id="ztj2" border="1" style="width: 580px;float: right;">
+            <table id="ztj2" border="1" style="width: 580px;float: right;text-align: center">
                 <tr style="height: 45px;background-color: #f0f0f0">
                     <td>商机数</td>
                     <td>百分比</td>
@@ -322,7 +322,7 @@
     <div>
         <div class="layui-inline" id="l4" style="width: 400px;height:350px;border-radius:0 0 5px 5px"></div>
         <div class="layui-inline" style="float: right;margin-top: -18px">
-            <table id="ztj3" border="1" style="width: 580px;float: right;">
+            <table id="ztj3" border="1" style="width: 580px;float: right;text-align: center">
                 <tr style="height: 45px;background-color: #f0f0f0">
                     <td>商机数</td>
                     <td>百分比</td>
@@ -335,7 +335,7 @@
     <div>
         <div class="layui-inline" id="l5" style="width: 400px;height:350px;border-radius:0 0 5px 5px"></div>
         <div class="layui-inline" style="float: right;margin-top: -18px">
-            <table id="ztj4" border="1" style="width: 580px;float: right;">
+            <table id="ztj4" border="1" style="width: 580px;float: right;text-align: center">
                 <tr style="height: 45px;background-color: #f0f0f0">
                     <td>商机数</td>
                     <td>百分比</td>
@@ -716,10 +716,11 @@
                     for (var i=0;i<data.length;i++){
                         var bfb1=data[i].sjCount/data[0].sjCount*100
                         var bfb2=data[i].moneySum/data[0].moneySum*100
-                        $("#zyj").append("<tr><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></td></tr>");
+                        $("#ztj").append("<tr style='height: 45px'><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></tr>");
                         var a={name:data[i].stat,value:data[i].sjCount}
                         obj.push(a);
                     }
+                    console.log(obj)
                     /*漏斗图*/
                     // 基于准备好的dom，初始化echarts实例
                     var myChart = echarts.init(document .getElementById('l1'));
@@ -749,10 +750,11 @@
                     for (var i=0;i<data.length;i++){
                         var bfb1=data[i].sjCount/data[0].sjCount*100
                         var bfb2=data[i].moneySum/data[0].moneySum*100
-                        $("#zyj1").append("<tr><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></td></tr>");
+                        $("#ztj1").append("<tr style='height: 45px'><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></tr>");
                         var a={name:data[i].stat,value:data[i].sjCount}
                         obj.push(a);
                     }
+                    console.log(obj)
 
                     /*漏斗图*/
                     // 基于准备好的dom，初始化echarts实例
@@ -783,11 +785,12 @@
                     for (var i=0;i<data.length;i++){
                         var bfb1=data[i].sjCount/data[0].sjCount*100
                         var bfb2=data[i].moneySum/data[0].moneySum*100
-                        $("#zyj2").append("<tr><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></td></tr>");
+                        $("#ztj2").append("<tr style='height: 45px'><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></tr>");
                         var a={name:data[i].stat,value:data[i].sjCount}
                         obj.push(a);
                     }
 
+                    console.log(obj)
                     /*漏斗图*/
                     // 基于准备好的dom，初始化echarts实例
                     var myChart1 = echarts.init(document .getElementById('l3'));
@@ -819,12 +822,12 @@
                     for (var i=0;i<data.length;i++){
                         var bfb1=data[i].sjCount/data[0].sjCount*100
                         var bfb2=data[i].moneySum/data[0].moneySum*100
-                        $("#zyj3").append("<tr><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></td></tr>");
+                        $("#ztj3").append("<tr style='height: 45px'><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></tr>");
                         var a={name:data[i].stat,value:data[i].sjCount}
                         obj.push(a);
-                        console.log(data[i].sjCount+data[i].moneySum)
                     }
 
+                    console.log(obj)
                     /*漏斗图*/
                     // 基于准备好的dom，初始化echarts实例
                     var myChart1 = echarts.init(document .getElementById('l4'));
@@ -857,11 +860,10 @@
                     for (var i=0;i<data.length;i++){
                         var bfb1=data[i].sjCount/data[0].sjCount*100
                         var bfb2=data[i].moneySum/data[0].moneySum*100
-                        $("#zyj3").append("<tr><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></td></tr>");
+                        $("#ztj4").append("<tr style='height: 45px'><td>"+data[i].sjCount+"</td><td>"+bfb1+"%</td><td>"+data[i].moneySum+"</td><td>"+bfb2+"%</td></tr>");
                         var a={name:data[i].stat,value:data[i].sjCount}
                         obj.push(a);
                     }
-
                     /*漏斗图*/
                     // 基于准备好的dom，初始化echarts实例
                     var myChart1 = echarts.init(document .getElementById('l5'));

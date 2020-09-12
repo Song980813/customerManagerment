@@ -61,7 +61,7 @@
             <button type="submit" lay-submit class="layui-btn  layui-btn-primary layui-btn-radius"  lay-filter="go"><i class="layui-icon-search"></i>查找</button>
         </div>
         <div class="layui-input-block layui-inline" style="float: right">
-            <button  type="submit" lay-submit class="layui-btn  layui-btn-primary layui-btn-sm" id="addafter">新增售后服务</button>
+            <button  type="button" lay-submit class="layui-btn  layui-btn-primary layui-btn-sm" id="add">新增售后服务</button>
             <button  type="button" lay-submit class="layui-btn  layui-btn-primary layui-btn-sm" id="reload">刷新</button>
         </div>
     </form>
@@ -100,8 +100,8 @@
             return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         });
         $(function(){
-            $("#addafter").click(function () {
-                window.location="/song/aftersaleadd.html";
+            $("#add").click(function () {
+                parent.location.href="/song/aftersaleadd.html";
             });
             $("#reload").click(function () {
                 table.reload('demo', {
@@ -198,16 +198,16 @@
                 datatype: 'json',
                 url: '/management/tb-aftersale/selectcount.do',
                 success: function (data) {
-                    var typecount=data.data;
-                    $("#a1").text(typecount.stat1);
-                    $("#a2").text(typecount.stat2);
-                    $("#a3").text(typecount.stat3);
-                    $("#q1").text(typecount.q1);
-                    $("#q2").text(typecount.q2);
-                    $("#q3").text(typecount.q3);
-                    $("#q4").text(typecount.q4);
-                    $("#q5").text(typecount.q5);
-                    $("#q6").text(typecount.q6);
+
+                    $("#a1").text(data.stat1);
+                    $("#a2").text(data.stat2);
+                    $("#a3").text(data.stat3);
+                    $("#q1").text(data.q1);
+                    $("#q2").text(data.q2);
+                    $("#q3").text(data.q3);
+                    $("#q4").text(data.q4);
+                    $("#q5").text(data.q5);
+                    $("#q6").text(data.q6);
                 }
             });
         });

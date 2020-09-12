@@ -34,19 +34,19 @@ public interface TbAftersaleMapper extends BaseMapper<TbAftersale> {
      * 查询各个时间段数量
      * @return
      */
-    @Select("SELECT * FROM tb_aftersale WHERE YEARWEEK(date_format(startime,'%Y-%m-%d'),1) = YEARWEEK(now(),1)")
+    @Select("SELECT count(*) FROM tb_aftersale WHERE YEARWEEK(date_format(startime,'%Y-%m-%d'),1) = YEARWEEK(now(),1)")
     public Integer dateCount4();//本周
-    @Select("SELECT * FROM tb_aftersale WHERE YEARWEEK(date_format(startime,'%Y-%m-%d'),1) = YEARWEEK(now(),1)-1")
+    @Select("SELECT count(*)  FROM tb_aftersale WHERE YEARWEEK(date_format(startime,'%Y-%m-%d'),1) = YEARWEEK(now(),1)-1")
     public Integer dateCount5();//上周
 
-    @Select("select * from tb_aftersale where date_format(startime,'%Y-%m')=date_format(now(),'%Y-%m')")
+    @Select("select count(*)  from tb_aftersale where date_format(startime,'%Y-%m')=date_format(now(),'%Y-%m')")
     public Integer dateCount6();//本月
-    @Select("select * from tb_aftersale where date_format(startime,'%Y-%m')=date_format(DATE_SUB(curdate(), INTERVAL 1 MONTH),'%Y-%m')")
+    @Select("select count(*)  from tb_aftersale where date_format(startime,'%Y-%m')=date_format(DATE_SUB(curdate(), INTERVAL 1 MONTH),'%Y-%m')")
     public Integer dateCount7();//上月
 
-    @Select("select * from tb_aftersale WHERE YEAR(startime)=YEAR(now()) AND QUARTER(startime) = QUARTER(NOW())")
+    @Select("select count(*)  from tb_aftersale WHERE YEAR(startime)=YEAR(now()) AND QUARTER(startime) = QUARTER(NOW())")
     public Integer dateCount8();//本季度
-    @Select("select * from tb_aftersale where YEAR(startime)=YEAR(now()) AND  QUARTER(startime)=QUARTER(DATE_SUB(now(),interval 1 QUARTER))")
+    @Select("select count(*)  from tb_aftersale where YEAR(startime)=YEAR(now()) AND  QUARTER(startime)=QUARTER(DATE_SUB(now(),interval 1 QUARTER))")
     public Integer dateCount9();//上季度
 
 }

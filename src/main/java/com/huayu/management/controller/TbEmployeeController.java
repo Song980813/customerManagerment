@@ -1,5 +1,6 @@
 package com.huayu.management.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.huayu.management.entity.TbEmployee;
 import com.huayu.management.service.ITbEmployeeService;
 import com.huayu.management.utlis.LayuiUtils1;
@@ -46,6 +47,12 @@ public class TbEmployeeController {
             return "redirect:/loghtml/loging.html";
         }
         model.addAttribute("log"+tbEmployee);
+        QueryWrapper wrapper=new QueryWrapper();
+        wrapper.eq("usernum",tbEmployee.getUsernum());
+             TbEmployee emp= tbEmployeeService.getOne(wrapper);
+        subject.getSession().setAttribute("username",emp.getName());
+        subject.getSession().setAttribute("phone",emp.getIdentificationPhoto());
+        subject.getSession().setAttribute("motto",emp.getMotto());
         return "redirect:/loghtml/zym.html";
     }
 
@@ -63,7 +70,6 @@ public class TbEmployeeController {
     @PostMapping("/laAdd.do")
     @ResponseBody
     public LayuiUtils1 LaAdd(@RequestParam("file") MultipartFile pictureFile, HttpServletResponse response, HttpServletRequest request){
-        System.out.println("2222222222222222222");
         LayuiUtils1 layuiUtils=new LayuiUtils1();
         try {
             String oriName = pictureFile.getOriginalFilename();
