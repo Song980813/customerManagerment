@@ -42,7 +42,7 @@ public class TbContract implements Serializable {
     /**
      * 合同金额
      */
-    private Double sum;
+    private String sum;
 
     /**
      * 签约日期

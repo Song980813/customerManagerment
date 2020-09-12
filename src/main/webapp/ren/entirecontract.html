@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>我的合同</title>
+    <title>全部合同</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
-    <!----------------------------------我的合同----------------------------------------->
+    <!----------------------------------全部合同----------------------------------------->
 </head>
 <body>
 <form class="layui-form" action="">
@@ -19,12 +19,13 @@
             <label class="layui-form-label">选择框</label>
             <div class="layui-input-block">
                 <select name="xiala" lay-verify="required">
-                    <option value="null">按合同全程</option>
-                    <option value="merchandisingtime">按合同编号</option>
-                    <option value="documentarytheme">按合同所属部门</option>
-                    <option value="merchandisingpeople">按关联人员</option>
-                    <option value="merchandisingpeople">按合同金额</option>
-                    <option value="merchandisingpeople">按签约日期</option>
+                    <option value="contract">请选择</option>
+                    <option value="contract">按客户名称</option>
+                    <option value="contractCode">按拼音</option>
+                    <option value="documentarytheme">按客户来源</option>
+                    <option value="merchandisingpeople">按国家/地区</option>
+                    <option value="merchandisingpeople">按所在城市</option>
+                    <option value="merchandisingpeople">按所属行业</option>
                 </select>
             </div>
 
@@ -45,7 +46,7 @@
         var table = layui.table;
         table.render({
             elem: '#test'
-            ,url:'/management/tb-documentary/slelectdousumenta.do'
+            ,url:'/management/tb-contract/selectall.do'
             ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             ,cols: [[
                 {field:'contract', width:'20%', title: '合同名称'}

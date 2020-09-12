@@ -7,12 +7,12 @@
     <!------------------------添加合同--------------------------------->
 </head>
 <body>
-<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+<form class="layui-form" action="" id="demo1">
    <div class="layui-form-item">
        <div class="layui-inline">
        <label class="layui-form-label">合同名称</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="contract" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
        <div class="layui-inline">
@@ -27,32 +27,37 @@
     <button type="reset"  	class="layui-btn layui-btn-primary">刷新</button>
    </div>
     <hr class="layui-bg-orange"><!--分割线-->
-    <div class="layui-form-item">
-        <div class="layui-inline">
+
+
+<!--    name="documentarytheme"-->
+    <div class="layui-form-item" style="width: 50%;">
         <label class="layui-form-label">客户名称</label>
-        <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+        <div class="layui-input-block" >
+            <select id="opt" lay-verify="required" lay-filter="allcli" name="customerName" >
+            </select>
         </div>
     </div>
+
+
         <div class="layui-inline">
         <label class="layui-form-label">所属行业</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text2"  id="id1" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
-    </div>
+
 
     <div class="layui-form-item">
         <div class="layui-inline">
         <label class="layui-form-label">所在城市</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input  type="text" id="id2" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
         <div class="layui-inline">
         <label class="layui-form-label">详细地址</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" id="id3" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
     </div>
@@ -63,13 +68,13 @@
     <div class="layui-inline">
         <label class="layui-form-label">合同名称</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="contract" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
     <div class="layui-inline">
         <label class="layui-form-label">合同编号</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="contractCode" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
     </div>
@@ -78,14 +83,14 @@
         <div class="layui-inline">
         <label class="layui-form-label">合同金额</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="sum" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
     <!--签约日期-->
         <div class="layui-inline">
             <label class="layui-form-label">签约日期</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+                <input type="text" name="contractDate" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
             </div>
         </div>
     </div>
@@ -93,13 +98,13 @@
     <div class="layui-inline">
         <label class="layui-form-label">生效日期</label>
         <div class="layui-input-inline">
-            <input type="text" class="layui-input" id="test2" placeholder="yyyy-MM-dd">
+            <input type="text" name="effectiveDate" class="layui-input" id="test2" placeholder="yyyy-MM-dd">
         </div>
     </div>
     <div class="layui-inline">
         <label class="layui-form-label">服务期至</label>
         <div class="layui-input-inline">
-            <input type="text" class="layui-input" id="test3" placeholder="yyyy-MM-dd">
+            <input type="text" name="expirationTime" class="layui-input" id="test3" placeholder="yyyy-MM-dd">
         </div>
     </div>
     </div>
@@ -108,13 +113,13 @@
         <div class="layui-inline">
         <label class="layui-form-label">对方联系人</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="customerPeople" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
         <div class="layui-inline">
         <label class="layui-form-label">固定电话</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="customerPhone" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
     </div>
@@ -122,13 +127,13 @@
         <div class="layui-inline">
         <label class="layui-form-label">移动电话</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="cellPhone" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
         <div class="layui-inline">
         <label class="layui-form-label">邮件/QQ</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
+            <input type="text" name="emailQq" placeholder="请输入" autocomplete="off" class="layui-input"style="width:200px">
         </div>
     </div>
     </div>
@@ -136,14 +141,13 @@
     <div class="layui-form-item">
         <label class="layui-form-label">主要技术条款</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="height:200px;width:500px">
+            <textarea placeholder="请输入内容" name="technicalTerm"  class="layui-textarea" style="width: 910px" ></textarea>
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">主要商务条款</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input"style="height:200px;width:500px">
-        </div>
+            <textarea placeholder="请输入内容" name="commerceClause"  class="layui-textarea" style="width: 910px" ></textarea>    </div>
     </div>
     <button type="button" class="layui-btn" id="test4"><i class="layui-icon"></i>上传文件</button>
 
@@ -151,19 +155,19 @@
         <div class="layui-inline">
         <label class="layui-form-label">合同所属部门</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
+            <input type="text" name="department" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
         </div>
     </div>
         <div class="layui-inline">
         <label class="layui-form-label">关联人员</label>
         <div class="layui-input-block">
-            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
+            <input type="text" name="associate" placeholder="请输入" autocomplete="off" class="layui-input" style="width:200px">
         </div>
     </div>
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <button class="layui-btn layui-btn-radius" lay-submit lay-filter="*">保存</button>
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
             <button type="button" class="layui-btn layui-btn-radius">重置</button>
             <button type="button" class="layui-btn layui-btn-radius">提交主管审核</button>
             <button type="button" class="layui-btn layui-btn-radius">组织多人评审</button>
@@ -176,20 +180,84 @@
 
 </form>
 <script src="/layui/layui.js"></script>
+<script src="/js/jquery.min.js"></script>
 <script>
-    layui.use('form', function(){
-        var form = layui.form;
 
-        //各种基于事件的操作，下面会有进一步介绍
-    });
-</script>
-<script>
-    layui.use('laydate', function(){
+
+
+
+    layui.use(['laydate','form','jquery'], function(){
         var laydate = layui.laydate;
+        var form=layui.form;
+        var $=layui.jquery;
         //常规用法
         laydate.render({
             elem: '#test1'
         });
+
+
+
+        $(function () {//查询完值以后给赋到下拉框里面
+            $.ajax({
+                type:'get',
+                url: '/management/tb-contract/selectcustomer.do',
+                datatype: 'json',
+                success:function(obj){
+                    // alert(obj.length)
+                    console.log(obj)
+                    for (var i = 0; i < obj.length; i++) {
+                        $("#opt").append("<option value='"+obj[i].customerName+"'>"+obj[i].customerName+"</option>")
+                    }
+                    form.render("select");
+                }
+            })
+        });
+
+
+        //from表单提交
+        form.on('submit(formDemo)', function(data){
+            $.ajax({
+                url:'/management/tb-contract/addcontract.do',
+                data:data.field,
+                dataType:'json',
+                type:'post',
+                success:function (data) {
+                    layer.msg(data.msg);
+                }
+            })
+            return false;
+        });
+
+       //把下拉框选中的值传到后台根据传回去的值查询客户信息
+        form.on('select(allcli)',function (data) {
+            $.ajax({
+                type: 'post',
+                url: '/management/tb-contract/selectcyst.do',//controller地址
+                dataType: "json",
+                 data: {cid:data.cid},
+                success: function(data){
+                    alert(data.length)
+                    var client=data.data;//获取对象
+                    alert(client.cid)
+                    var industry=client.cid;//拿到值
+                    $("#industry option").each(function () {
+                        if($(this).val()==industry){
+                            form.render();
+                            $(this).attr("selected","selected");
+                            form.render('select');
+                        }
+                    })
+                    $("#id1").val(client.industry);
+                    $("#id2").val(client.city);
+                    $("#id3").val(client.address);
+                }
+            })
+        })
+
+
+
+
+
     });
     layui.use('laydate', function(){
         var laydate = layui.laydate;
@@ -206,18 +274,9 @@
         });
     });
 </script>
-<script>
-    //指定允许上传的文件类型
-    upload.render({
-        elem: '#test4'
-        ,url: 'https://httpbin.org/post' //改成您自己的上传接口
-        ,accept: 'file' //普通文件
-        ,done: function(res){
-            layer.msg('上传成功');
-            console.log(res);
-        }
-    });
-    </script>
+
+
+
 </body>
 </html>
 </html>

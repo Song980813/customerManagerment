@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新增跟单</title>
+    <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+</head>
+
+<body>
+<script src="/layui/layui.js" charset="utf-8"></script>
+<script src="/js/jquery.min.js"></script>
+
+<div class="layui-form-item" style="border:1px solid ;background-color: lightblue;height:35px;"><font size="4">历史跟单记录</font></div>
+
+
+<div id="select">
+</div>
+
+<div class="layui-form-item" style="border:1px solid ;background-color: lightblue;height:35px;"><font size="4">新增跟单记录</font></div>
+
+<div>
+    <button type="button" class="layui-btn layui-btn-warm layui-btn-radius" style="right: 200px">
+        <i class="layui-icon">&#xe65a;</i>
+        <a href="/html/pml/documentary/queryDocumentary.html">返回</a>
+    </button>
+</div>
+
+
+<form class="layui-form" action="" id="demo1">
+    <div class="layui-form-item" style="width: 50%;">
+        <label class="layui-form-label">跟单主题</label>
+        <div class="layui-input-block">
+            <select name="documentarytheme" id="opt" lay-verify="required">
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label">跟单时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" name="merchandisingtime" id="documentarytime" placeholder="HH:mm:ss">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">跟单分类</label>
+        <div class="layui-input-block">
+            <select name="classify" lay-verify="required" style="width: 50px">
+                <option value="请选择">请选择</option>
+                <option value="电话沟通">电话沟通</option>
+                <option value="邮件联系">邮件联系</option>
+                <option value="网上交流">网上交流</option>
+                <option value="上面拜访">上面拜访</option>
+                <option value="产品送样">产品送样</option>
+                <option value="客户招待">客户招待</option>
+                <option value="其他">其他</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">跟单人</label>
+        <div class="layui-input-block">
+            <input type="text" style="width: 45%;" name="merchandisingpeople" required  lay-verify="required" th:value="" th:text=""  autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">详细内容</label>
+        <div class="layui-input-block">
+            <input type="text" style="width: 45%;" name="details" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-upload">
+        <label class="layui-form-label">附件</label>
+        <button type="button" class="layui-btn" id="filename">
+            <i class="layui-icon">&#xe67c;</i>上传图片
+        </button>
+        <input type="hidden" name="enclosure" id="p">
+    </div>
+    <div class="layui-upload">
+        <label class="layui-form-label">预览</label>
+        <div class="layui-upload-list">
+            <img class="layui-upload-img" id="attachment" style="width: 100px;height: 100px">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    layui.use(['form','laydate','layer','jquery','upload'], function(){
+        var form = layui.form;
+        var laydate = layui.laydate;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        var upload = layui.upload;
+
+        $(function () {//查询完值以后给赋到下拉框里面
+                    $.ajax({
+                        type:'get',
+                        url: '/management/tb-documentary/selectname.do',
+                        datatype: 'json',
+                        success:function(obj){
+                            // alert(obj.length)
+                            for (var i = 0; i < obj.length; i++) {
+                                $("#opt").append("<option value='"+obj[i].name1+"'>"+obj[i].name2+"</option>")
+                            }
+                            form.render('select');
+                        }
+            });
+
+            $.ajax({
+                type:'get',
+                url: '/documentary/select.do',
+                datatype: 'json',
+                success:function(data){
+                    var str="";
+                    for (var i = 0; i < data.length; i++) {
+                        str+=" <div class=\"layui-form-item\">\n" +
+                            "            <div class=\"layui-form-item layui-inline\">\n" +
+                            "                <label class=\"layui-form-label\">*跟单时间:</label>\n" +
+                            "                <div class=\"layui-input-block\">\n" +
+                            "                    <input type=\"text\"  id=\"date1\" disabled=\"disabled\" style=\"border:none;\"  value="+data[i].documentarytime+" autocomplete=\"off\" class=\"layui-input\">\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "            <div class=\"layui-form-item layui-inline\">\n" +
+                            "                <label class=\"layui-form-label\">*跟单分类:</label>\n" +
+                            "                <div class=\"layui-input-block\">\n" +
+                            "                    <input type=\"text\" disabled=\"disabled\" style=\"border:none;\"  value="+data[i].documentaryclass+" autocomplete=\"off\" class=\"layui-input\">\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "            <div class=\"layui-form-item layui-inline\">\n" +
+                            "                <label class=\"layui-form-label\">跟单人:</label>\n" +
+                            "                <div class=\"layui-input-block\">\n" +
+                            "                    <input type=\"text\"  disabled=\"disabled\" style=\"border:none; size:100\" value="+data[i].username+" autocomplete=\"off\" class=\"layui-input\">\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "        </div>\n" +
+                            "        <div class=\"layui-form-item\">\n" +
+                            "            <div class=\"layui-form-item layui-inline\">\n" +
+                            "                <label class=\"layui-form-label\">详细内容:</label>\n" +
+                            "                <div class=\"layui-input-block\">\n" +
+                            "                    <input type=\"text\" disabled=\"disabled\" style=\"border:none;\" value="+data[i].detail+" autocomplete=\"off\" class=\"layui-input\">\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "        </div>\n" +
+                            "        <div class=\"layui-form-item\">\n" +
+                            "            <div class=\"layui-form-item layui-inline\">\n" +
+                            "                <label class=\"layui-form-label\">附件:</label>\n" +
+                            "                <div class=\"layui-input-block\">\n" +
+                            "                    <input type=\"text\" disabled=\"disabled\" style=\"border:none;\" value="+data[i].attachment+" autocomplete=\"off\" class=\"layui-input\">\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "        </div> " +
+                            "        <hr>";
+                    }
+                    $("#select").html(str);
+                }
+            });
+
+
+            //普通图片上传
+            var uploadInst = upload.render({
+                elem: '#filename'
+                ,url: '/documentary/pictureUpload.do' //改成您自己的上传接口
+                ,before: function(obj){//展示图片
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result){
+                        $('#attachment').attr('src', result); //图片链接（base64）
+                    });
+                }
+                ,done: function(res){
+                    console.log(res)
+                    if(res.code == 0){
+                        $("#p").val(res.data);//获取图片地址赋给p文本框
+                        layer.msg("上传成功");
+                    }
+                }
+            });
+
+
+        })
+
+
+        form.on('submit(formDemo)', function(data){
+            $.ajax({
+                url:'/management/tb-documentary/adddoc.do',
+                data:data.field,
+                dataType:'json',
+                type:'post',
+                success:function (data) {
+                    layer.msg(data.msg);
+                }
+            })
+            return false;
+        });
+
+        //时间选择器
+        laydate.render({
+            elem: '#test'
+            ,type: 'time'
+        });
+    });
+</script>
+
+</body>
+</html>
