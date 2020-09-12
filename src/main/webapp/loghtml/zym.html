@@ -16,33 +16,6 @@
     <script src="/js/echarts.min.js"></script>
     <script src="/js/jquery.min.js"></script>
 </head>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document .getElementById('main'));
-        console.log(`123${myChart}`)
-        // 指定图表的配置项和数据
-        var option = {
-            series : [
-                {
-                    name: '访问来源',
-                    type: 'pie',
-                    radius: '55%',
-                    roseType: 'angle',
-                    data:[
-                        {value:235, name:'已成交'},
-                        {value:274, name:'已丢单'},
-                        {value:310, name:'已搁置'},
-                        {value:335, name:'进行中'}
-                    ]
-                }
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    })
-</script>
 <style type="text/css">
     .to {
         width: 100px;
@@ -86,10 +59,12 @@
 
 <div id="perspective" class="perspective effect-airbnb">
 
-    <div class="container">
+    <div id="ss" class="container">
         <div class="wrapper">
             <button id="showMenu">显示菜单</button>
-            <iframe frameborder=0 scrolling=no height="600px" width="100%" src="/song/homepage2.html"></iframe>
+            <iframe id="iframe1" frameborder=0 scrolling=no height="1000px" width="100%" src="/song/homepage2.html">
+                主页面
+            </iframe>
 
         </div><!-- wrapper -->
     </div><!-- /container -->
@@ -107,18 +82,18 @@
             </div>
         </div>
         <div style="float:left;font-size: 18px;margin-left: 60px">
-            <a href="/loghtml/1.html" class="icon-home">我的桌面</a>
-            <a href="/loghtml/customer.html"class="icon-news">客户管理</a>
-            <a href="/business/mybusiness.html" class="icon-image">我的商机</a>
-            <a href="/business/business.html" class="icon-upload">全部商机</a>
-            <a href="" class="icon-star">我的跟单</a>
-            <a href="#" class="icon-mail">全部跟单</a>
-            <a href="#" class="icon-lock">全部讨论帖子</a>
-            <a href="#" class="icon-mail">我的合同</a>
-            <a href="#" class="icon-mail">全部合同</a>
-            <a href="#" class="icon-lock">售后服务</a>
-            <a href="#" class="icon-lock">统计分析</a>
-            <a href="#" class="icon-lock">安全退出</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-home">我的桌面</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-news">客户管理</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-image">我的商机</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-upload">全部商机</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-star">我的跟单</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-mail">全部跟单</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-lock">全部讨论帖子</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-mail">我的合同</a>
+            <a href="#" onclick="temp('/song/homepage2.html')" class="icon-mail">全部合同</a>
+            <a href="#" onclick="temp('/song/aftersale.html')" class="icon-lock">售后服务</a>
+            <a href="#" onclick="temp('/song/statisticalanalysis/statistics.html')" class="icon-lock">统计分析</a>
+            <a href="#" onclick="comeback()" class="icon-lock">安全退出</a>
         </div>
        
     </nav>
@@ -127,7 +102,15 @@
 
 <script src="/js1/classie.js"></script>
 <script src="/js1/menu.js"></script>
-
+<script>
+    var temp=function (a) {
+        document.getElementById("ss").click();
+        $("#iframe1").attr("src",a);
+    }
+    $(function () {
+        $("#showMenu").click();
+    });
+</script>
 
 </body>
 </html>

@@ -1,7 +1,8 @@
 package com.huayu.management.service;
 
-import com.huayu.management.entity.TbCustomer;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.huayu.management.bo.LayuiEntity;
+import com.huayu.management.entity.TbCustomer;
 
 /**
  * <p>
@@ -13,4 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITbCustomerService extends IService<TbCustomer> {
 
+  LayuiEntity selequu(Integer page,Integer limit,String classification,String pinyin);
+    Integer update1(TbCustomer tbCustomer);
 }

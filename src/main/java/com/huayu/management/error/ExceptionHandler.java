@@ -1,13 +1,7 @@
 package com.huayu.management.error;
 
-import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class ExceptionHandler implements HandlerExceptionResolver {
-    @Override
+public class ExceptionHandler {
+/*    @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
         //1、判断是哪一种异常
         String msg="";
@@ -22,5 +16,5 @@ public class ExceptionHandler implements HandlerExceptionResolver {
         modelAndView.addObject("error",msg);
         modelAndView.setViewName("/error/500.html");
         return modelAndView;
-    }
+    }*/
 }

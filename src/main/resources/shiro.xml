@@ -33,7 +33,11 @@
         <property name="filterChainDefinitions">
             <value>
                 /loging.html=anon
-                /customer/addcustomer.html=anon
+                /customer/addcustomer.html=authc
+                /savelog.do=anon
+                /register.html=anon
+                //logooin.do=anon
+                /laAdd.do=anon
             </value>
         </property>
     </bean>

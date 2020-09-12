@@ -2,9 +2,10 @@ package com.huayu.management.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -112,7 +113,7 @@ public class TbBusiness implements Serializable {
     /**
      * 客户ID
      */
-    private String cid;
+    private int cid;
     /**
      *
      */
@@ -129,4 +130,8 @@ public class TbBusiness implements Serializable {
      * 详细地址
      */
     private String address;
+    /**
+     * 新增日期
+     */
+    private String addtime;
 }

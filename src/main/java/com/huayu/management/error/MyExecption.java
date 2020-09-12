@@ -1,7 +1,7 @@
 package com.huayu.management.error;
 
 public class MyExecption extends Exception{
-    private String msg;
+/*    private String msg;
 
     public String getMsg() {
         return msg;
@@ -18,5 +18,5 @@ public class MyExecption extends Exception{
     public MyExecption(String msg) {
         super(msg);
         this.msg = msg;
-    }
+    }*/
 }

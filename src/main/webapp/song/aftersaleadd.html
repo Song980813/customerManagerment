@@ -85,12 +85,12 @@
                 <div id="u482_div" class=""></div>
                 <div id="u482_text" class="text ">
                        <span style="margin-left: 215px;">新增售后服务
-                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left: 760px;width: 67px;">
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="comeback()" style="margin-left: 760px;width: 67px;">
                                 <i class="layui-icon layui-icon-left"></i>返回
                               </button>
-                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
-                              <i class="layui-icon  layui-icon-refresh-3" style="color: #333333"></i>刷新
-                            </button>
+                            <a  href="javascript:location.reload();" class="layui-btn layui-btn-primary layui-btn-sm" style="width: 67px;">
+                              <i class="layui-icon  layui-icon-refresh-3" style="color: #333333" onclick="refresh()"></i>刷新
+                            </a>
                           </span>
                 </div>
             </div>
@@ -282,9 +282,9 @@
             </div>
                 <br>
                 <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="width: 90px" lay-fifter="editor">保存</button>
-                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary " style="width: 120px">转服务人员处理</button>
-                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 120px">本次服务完成</button>
-                <a href="#" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 90px">取消</a>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary " style="width: 120px" lay-fifter="doing">转服务人员处理</button>
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 120px" lay-fifter="over">本次服务完成</button>
+                <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary" style="width: 90px">取消</button>
 
             </form>
         </div>
@@ -297,7 +297,6 @@
     layui.use(['form', 'layedit', 'laydate'], function(){
         var laydate = layui.laydate;
         var form = layui.form;
-        var laydate = layui.laydate;
         var layer = layui.layer
         //常规用法
         laydate.render({
@@ -306,13 +305,12 @@
         laydate.render({
             elem: '#test2'
         });
-    form.on("submit(editor)",function(data){
-        console.log(data.field);
+    form.on("submit(editor)",function(data){//保存
         $.ajax({
             url: '/management/tb-aftersale/addnew.do',
             data: data.field,
             dataType:'json',
-            type: 'get',
+            type: 'post',
             success:function(rs){
                 if(rs.code > 0){
                     layui.open({
@@ -343,12 +341,84 @@
             }
         })
     })
+        form.on('submit(doing)',function (data) {//转服务人员处理
+            $.ajax({
+                url: '/management/tb-aftersale/addnew1.do',
+                data: data.field,
+                dataType:'json',
+                type: 'post',
+                success:function(rs){
+                    if(rs.code > 0){
+                        layui.open({
+                            type: 1,
+                            content: '新增售后服务成功',
+                            area:['300px','200px'],
+                            resize:false,
+                            btn: ['查看详情','返回'],
+                            yes:function(index){
+                                stamp();
+                            },
+                            end:function () {
+                                comeback();
+                            }
+                        })
+                    }else{
+                        layui.open({
+                            type: 1,
+                            content: '新增售后服务失败',
+                            area:['300px','200px'],
+                            resize:false,
+                            btn: ['重试','返回'],
+                            end:function () {
+                                comeback();
+                            }
+                        })
+                    }
+                }
+            })
+        });
+        form.on('submit(over)',function (data) {//本次服务已完成
+            $.ajax({
+                url: '/management/tb-aftersale/addnew2.do',
+                data: data.field,
+                dataType:'json',
+                type: 'post',
+                success:function(rs){
+                    if(rs.code > 0){
+                        layui.open({
+                            type: 1,
+                            content: '新增售后服务成功',
+                            area:['300px','200px'],
+                            resize:false,
+                            btn: ['查看详情','返回'],
+                            yes:function(index){
+                                stamp();
+                            },
+                            end:function () {
+                                comeback();
+                            }
+                        })
+                    }else{
+                        layui.open({
+                            type: 1,
+                            content: '新增售后服务失败',
+                            area:['300px','200px'],
+                            resize:false,
+                            btn: ['重试','返回'],
+                            end:function () {
+                                comeback();
+                            }
+                        })
+                    }
+                }
+            })
+        });
     });
     function stamp(){
         window.location = "/management/tb-aftersale/queryone.do";
     }
     function comeback() {
-        window.history.back();
+        window.history.go(-1);
     }
 </script>
 </body>

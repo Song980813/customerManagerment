@@ -2,9 +2,10 @@ package com.huayu.management.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -119,12 +120,15 @@ public class TbAftersale implements Serializable {
     /**
      * 服务评分
      */
-    private String serrating;
+    private int serrating;
 
     /**
      * 相关附件
      */
     private String relattachm;
-
+    /**
+     * 服务状态
+     */
+    private String statistics;
 
 }
