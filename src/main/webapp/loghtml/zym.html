@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--suppress ALL-->
+<html  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,9 +75,9 @@
             <div class="to3" align="center">
                 <div class="to2" align="center">
                     <div class="to1" align="center">
-                        <img class="to" alt="aaa" src="/img/2.2.jpg"><br><br><br><br>
-                        <p>陈航</p>
-                        <p>探索人体奥妙</p>
+                        <img class="to" alt="头像" th:src="${phone==null?'/img/2.2.jpg':phone}"><br><br><br><br>
+                        <span id="sp1">[[{username}]]</span>
+                        <span id="sp2">[[motto]]</span>
                     </div>
                 </div>
             </div>
@@ -109,6 +110,14 @@
     }
     $(function () {
         $("#showMenu").click();
+        $.ajax({
+            url: '/management/statistic/.do',
+            //dataType:'json',
+            type: 'post',
+            success:function(data){
+
+            }
+        });
     });
 </script>
 
